@@ -3,8 +3,8 @@ package homework_2;
 public class Application {
 
     public static void main(String[] args) {
-
-
+        int num = sumOfSequenceOfNaturalNumbers(1, 4);
+        System.out.println(num);
     }
 
     static int method1(int a, int b) {
@@ -38,5 +38,20 @@ public class Application {
      */
     static int sum(int a, int b) {
         return a + b;
+    }
+
+    /**
+     * @param start - 1st number of natural sequence
+     * @param end   - last number of natural sequence
+     * @return sum of all numbers in sequence
+     */
+    static int sumOfSequenceOfNaturalNumbers(int start, int end) {
+        int sum = 0;
+        int countOfSequence = end - start + 1;
+        for (int i = 0; i < countOfSequence; i++) {
+            sum += start;
+            start = start + 1;
+        }
+        return sum;
     }
 }
