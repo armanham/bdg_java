@@ -50,7 +50,7 @@ public class Application {
         int countOfSequence = end - start + 1;
         for (int i = 0; i < countOfSequence; i++) {
             sum += start;
-            start = start + 1;
+            start += 1;
         }
         return sum;
     }
