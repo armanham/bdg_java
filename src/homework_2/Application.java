@@ -41,9 +41,9 @@ public class Application {
     }
 
     /**
-     * @param start - 1st number of natural sequence
-     * @param end   - last number of natural sequence
-     * @return sum of all numbers in sequence
+     * @param start 1st number of natural sequence
+     * @param end   last number of natural sequence
+     * @return sum of all numbers in [start; end]
      */
     static int sumOfSequenceOfNaturalNumbers(int start, int end) {
         int sum = 0;
