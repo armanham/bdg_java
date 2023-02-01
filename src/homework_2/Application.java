@@ -45,7 +45,7 @@ public class Application {
      * @param end   last number of natural sequence
      * @return sum of all numbers in [start; end]
      */
-    static int sumOfSequenceOfNaturalNumbers(int start, int end) {
+    public static int sumOfSequenceOfNaturalNumbers(int start, int end) {
         int sum = 0;
         int countOfSequence = end - start + 1;
         for (int i = 0; i < countOfSequence; i++) {
