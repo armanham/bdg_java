@@ -152,8 +152,12 @@ public class OperatorsUtil {
         System.out.println("10 << 2: " + (10 << 2));
         System.out.println("-10 << 3: " + (-10 << 3));
         System.out.println("20 >> 2: " + (20 >> 2));
-        System.out.println("15 >> 3: " + (15 >> 3));
+        System.out.println("15 >> 3: " + (15 >> 3) + "\n");
 
-        //TODO Տրված   փոփոխականը   բազմապատկեք   8-ով   եւ   16-ով   առանց օգտագործելու *-նշանը։
+        //Տրված   փոփոխականը   բազմապատկեք   8-ով   եւ   16-ով   առանց օգտագործելու *-նշանը։
+        int j = 3;
+        System.out.println("j: " + j);
+        System.out.println("(j * 8) == (j << 3): " + (j << 3));
+        System.out.println("(j * 16) == (j << 4): " + (j << 4));
     }
 }
