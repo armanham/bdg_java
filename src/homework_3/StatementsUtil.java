@@ -121,6 +121,24 @@ public class StatementsUtil {
 
 
     /**
+     * This method determines does the point belong to the circle
+     * The coordinates for centre of circle is (0; 0)
+     *
+     * @param x      horizontal coordinate of point
+     * @param y      vertical coordinate of point
+     * @param radius int number, radius of circle
+     * @return true if the point belongs to the circle, false otherwise
+     */
+    public boolean isPointBelongCircle(int x, int y, int radius) {
+        if (radius <= 0) {
+            System.out.println("Parameter radius must be positive number:");
+            return false;
+        }
+        return (x <= radius && x >= -radius) && (y <= radius && y >= -radius);
+    }
+
+
+    /**
      * This method finds the largest number among any three numbers
      *
      * @param a int number
@@ -225,21 +243,21 @@ public class StatementsUtil {
      * @param end int number, last number of [1; end] sequence
      * @return multiple of two-digit and even numbers
      */
-    public long multipleOfTwoDigitEvenNumbers(int end) {
+    public Long multipleOfTwoDigitEvenNumbers(long end) {
         if (end <= 10) {           //ավելի ճիշտ կլիներ օգտագործել exception
             System.out.println("Parameter end must be >10 number:");
-            return 0;
+            return 0L;
         }
         long multiple = 1;
         if (end > 99) {
-            for (int i = 10; i <= 99; i++) {
+            for (long i = 10; i <= 99; i++) {
                 if (i % 2 == 0) {
                     multiple *= i;
                 }
             }
             return multiple;
         }
-        for (int i = 10; i <= end; i++) {
+        for (long i = 10; i <= end; i++) {
             if (i % 2 == 0) {
                 multiple *= i;
             }
