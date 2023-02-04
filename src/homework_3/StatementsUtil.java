@@ -249,9 +249,6 @@ public class StatementsUtil {
     }
 
 
-    //մեթոդը գրված ա ընդհանուր դեպքերի համար, բայց բոլոր հնարավոր երկնիշ զույգերը
-    //ընդգրկելու դեպքում կառաջանա այդ թվերի բազմապատիկը պահելու խնդիր
-
     /**
      * This method counts of multiple of two-digit and even numbers
      *
