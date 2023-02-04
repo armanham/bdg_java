@@ -1,5 +1,7 @@
 package homework_3;
 
+import java.math.BigDecimal;
+
 /**
  * @author Arman Hambardzumyan
  */
@@ -243,23 +245,23 @@ public class StatementsUtil {
      * @param end int number, last number of [1; end] sequence
      * @return multiple of two-digit and even numbers
      */
-    public Long multipleOfTwoDigitEvenNumbers(long end) {
+    public BigDecimal multipleOfTwoDigitEvenNumbers(int end) {
         if (end <= 10) {           //ավելի ճիշտ կլիներ օգտագործել exception
             System.out.println("Parameter end must be >10 number:");
-            return 0L;
+            return BigDecimal.ZERO;
         }
-        long multiple = 1;
+        BigDecimal multiple = BigDecimal.ONE;
         if (end > 99) {
-            for (long i = 10; i <= 99; i++) {
+            for (int i = 10; i <= 99; i++) {
                 if (i % 2 == 0) {
-                    multiple *= i;
+                    multiple = multiple.multiply(BigDecimal.valueOf(i));
                 }
             }
             return multiple;
         }
-        for (long i = 10; i <= end; i++) {
+        for (int i = 10; i <= end; i++) {
             if (i % 2 == 0) {
-                multiple *= i;
+                multiple = multiple.multiply(BigDecimal.valueOf(i));
             }
         }
         return multiple;
