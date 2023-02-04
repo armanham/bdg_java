@@ -136,7 +136,9 @@ public class StatementsUtil {
             System.out.println("Parameter radius must be positive number:");
             return false;
         }
-        return (x <= radius && x >= -radius) && (y <= radius && y >= -radius);
+        return Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(radius, 2);
+        //or
+        //return (x <= radius && x >= -radius) && (y <= radius && y >= -radius);
     }
 
 
@@ -152,7 +154,7 @@ public class StatementsUtil {
         if (a >= b && a >= c) {
             return a;
         }
-        if (b >= a && b >= c) {
+        if (b >= c) {
             return b;
         }
         return c;
@@ -186,17 +188,28 @@ public class StatementsUtil {
 
 
     /**
-     * This method prints first digit of any number
+     * This method prints first digit of any positive number
      *
      * @param number int number
+     * @return the first digit of number
      */
-    public void printFirstDigitOf(int number) {
+    public int firstDigitOf(int number) {
+        if (number <= 0) {
+            System.out.println("Parameter number must be positive number:");
+            return 0;
+        }
+        if (number < 10) {
+            return number;
+        }
         int currentDigit = 0;
-        while (number % 10 != 0) {
+        while (number > 9) {
             currentDigit = number % 10;
             number /= 10;
+            if (number < 10) {
+                currentDigit = number;
+            }
         }
-        System.out.println(currentDigit);
+        return currentDigit;
     }
 
 
