@@ -79,9 +79,11 @@ public class AlgorithmicExercises {
     }
 
 
-    //The prime factors of 455 are 5, 7 and 13.
-    //Write a method that calculates the largest prime factor of a given
-    //number.
+    /**
+     * This method finds the largest prime factor of number.
+     * @param number int number, must be > 1
+     * @return the largest prime factor of number
+     */
     public static int largestPrimeFactorOf(int number) {
         if (number <= 1) {
             System.out.println("Only >1 numbers have prime divisors");
@@ -97,6 +99,12 @@ public class AlgorithmicExercises {
         return largestPrimeFactor;
     }
 
+
+    /**
+     * This method determines is the number prime or not.
+     * @param number int number.
+     * @return true if the number is prime, false otherwise.
+     */
     public static boolean isPrime(int number) {
         if (number <= 0) {
             System.out.println("Only positive numbers can be prime:");
