@@ -162,6 +162,25 @@ public class StatementsUtil {
 
 
     /**
+     * This method finds the smallest number among any three numbers
+     *
+     * @param a int number
+     * @param b int number
+     * @param c int number
+     * @return minimum of a, b, c
+     */
+    public int minValueOf(int a, int b, int c) {
+        if (a <= b && a <= c) {
+            return a;
+        }
+        if (b <= c) {
+            return b;
+        }
+        return c;
+    }
+
+
+    /**
      * This method determines is the year leap or not
      *
      * @param year int number
