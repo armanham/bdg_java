@@ -165,15 +165,15 @@ public class AlgorithmicExercises {
         return sum;
     }
 
-    //sin x = 1 - x3/3! + x5/5! - x7/7! + x9/9!
+    //sin x = x - x3/3! + x5/5! - x7/7! + x9/9!
     //Չի տալիս ճիշտ արդյունք, բայց գրված ա, տրված բանաձևի համաձայն
     public double sinOf(int number) {
-        double sum = 1;
+        double sum = number;
         for (double i = 1; i <= number; i++) {
             if (i % 2 == 0) {
-                sum -= (Math.pow(number, (1 + (i * 2))) / factorialOf((1 + (int) i * 2)));
-            } else {
                 sum += (Math.pow(number, (1 + (i * 2))) / factorialOf((1 + (int) i * 2)));
+            } else {
+                sum -= (Math.pow(number, (1 + (i * 2))) / factorialOf((1 + (int) i * 2)));
             }
         }
         return sum;
@@ -186,9 +186,9 @@ public class AlgorithmicExercises {
         double sum = 1;
         for (double i = 1; i <= number; i++) {
             if (i % 2 == 0) {
-                sum -= (Math.pow(number, (i * 2)) / factorialOf(((int) i * 2)));
-            } else {
                 sum += (Math.pow(number, (i * 2)) / factorialOf(((int) i * 2)));
+            } else {
+                sum -= (Math.pow(number, (i * 2)) / factorialOf(((int) i * 2)));
             }
         }
         return sum;
