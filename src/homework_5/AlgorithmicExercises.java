@@ -164,4 +164,60 @@ public class AlgorithmicExercises {
         }
         return sum;
     }
+
+    //sin x = 1 - x3/3! + x5/5! - x7/7! + x9/9!
+    //Չի տալիս ճիշտ արդյունք, բայց գրված ա, տրված բանաձևի համաձայն
+    public double sinOf(int number) {
+        double sum = 1;
+        for (double i = 1; i <= number; i++) {
+            if (i % 2 == 0) {
+                sum -= (Math.pow(number, (1 + (i * 2))) / factorialOf((1 + (int) i * 2)));
+            } else {
+                sum += (Math.pow(number, (1 + (i * 2))) / factorialOf((1 + (int) i * 2)));
+            }
+        }
+        return sum;
+    }
+
+
+    //cos x = 1 - x2/2! + x4/4! - x6/6!
+    //Չի տալիս ճիշտ արդյունք, բայց գրված ա, տրված բանաձևի համաձայն
+    public double cosOf(int number) {
+        double sum = 1;
+        for (double i = 1; i <= number; i++) {
+            if (i % 2 == 0) {
+                sum -= (Math.pow(number, (i * 2)) / factorialOf(((int) i * 2)));
+            } else {
+                sum += (Math.pow(number, (i * 2)) / factorialOf(((int) i * 2)));
+            }
+        }
+        return sum;
+    }
+
+
+    /**
+     * This method calculates factorial of any number
+     *
+     * @param number int number
+     * @return the factorial of any number
+     */
+    public long factorialOf(int number) {
+        int result = 1;
+        if (number < 0 && number % 2 != 0) {
+            for (int i = 2; i <= -number; i++) {
+                result *= i;
+            }
+            return -result;
+        }
+        if (number < 0) {
+            for (int i = 2; i <= -number; i++) {
+                result *= i;
+            }
+            return -result;
+        }
+        for (int i = 2; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
 }
