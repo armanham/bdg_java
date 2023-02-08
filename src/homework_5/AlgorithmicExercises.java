@@ -185,10 +185,9 @@ public class AlgorithmicExercises {
      * @return sine of number.
      */
     public double sinOf(double number, int correction) {
-        double radian = number * Math.PI / 180;
         double sum = 0;
         for (double i = 0; i <= correction; i++) {
-            sum += Math.pow(-1.0, i) * Math.pow(radian, 2 * (int) i + 1) / factorialOf(1 + (int) i * 2);
+            sum += Math.pow(-1.0, i) * Math.pow(Math.toRadians(number), 2 * (int) i + 1) / factorialOf(1 + (int) i * 2);
         }
         return sum;
     }
@@ -203,10 +202,9 @@ public class AlgorithmicExercises {
      * @return cosine of number.
      */
     public double cosOf(double number, int correction) {
-        double radian = number * Math.PI / 180;
         double sum = 0;
         for (double i = 0; i <= correction; i++) {
-            sum += Math.pow(-1.0, i) * Math.pow(radian, 2 * (int) i) / factorialOf(2 * (int) i);
+            sum += Math.pow(-1.0, i) * Math.pow(Math.toRadians(number), 2 * (int) i) / factorialOf(2 * (int) i);
         }
         return sum;
     }
