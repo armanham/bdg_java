@@ -165,25 +165,38 @@ public class AlgorithmicExercises {
         return sum;
     }
 
-    //sin x = x - x3/3! + x5/5! - x7/7! + x9/9!
+
+    /**
+     * This method calculates sine of any number.
+     * sin x = x - x^3/3! + x^5/5! - x^7/7! + ... x^n/n!
+     *
+     * @param number     double number.
+     * @param correction int number, calculation correcting.
+     * @return sine of number.
+     */
     public double sinOf(double number, int correction) {
+        double radian = number * Math.PI / 180;
         double sum = 0;
         for (double i = 0; i <= correction; i++) {
-            sum += Math.pow(-1.0, i) * Math.pow(number * Math.PI / 180, 2 * (int)i + 1) / factorialOf(1 + (int) i * 2);
+            sum += Math.pow(-1.0, i) * Math.pow(radian, 2 * (int) i + 1) / factorialOf(1 + (int) i * 2);
         }
         return sum;
     }
 
 
-    //cos x = 1 - x2/2! + x4/4! - x6/6!
+    /**
+     * This method calculates cosine of any number.
+     * cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... x^n/n!
+     *
+     * @param number     double number.
+     * @param correction int number, calculation correcting.
+     * @return cosine of number.
+     */
     public double cosOf(double number, int correction) {
-        double sum = 1;
-        for (double i = 1; i <= correction; i++) {
-            if (i % 2 == 0) {
-                sum += (Math.pow(number * Math.PI / 180, (i * 2)) / factorialOf(((int) i * 2)));
-            } else {
-                sum -= (Math.pow(number * Math.PI / 180, (i * 2)) / factorialOf(((int) i * 2)));
-            }
+        double radian = number * Math.PI / 180;
+        double sum = 0;
+        for (double i = 0; i <= correction; i++) {
+            sum += Math.pow(-1.0, i) * Math.pow(radian, 2 * (int) i) / factorialOf(2 * (int) i);
         }
         return sum;
     }
