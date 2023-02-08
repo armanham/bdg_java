@@ -75,14 +75,15 @@ public class AlgorithmicExercises {
 
 
     /**
-     * This method finds and prints largest and smallest values of array
+     * This method finds and prints largest and smallest values of array.
      *
-     * @param array int[] array
+     * @param array         int[] array.
+     * @param lengthOfArray int number.
      */
-    public void largestAndSmallestValuesOf(int[] array) {
+    public void largestAndSmallestValuesOf(int[] array, int lengthOfArray) {
         int min = array[0];
         int max = array[0];
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 1; i < lengthOfArray; i++) {
             if (min >= array[i]) {
                 min = array[i];
             }
