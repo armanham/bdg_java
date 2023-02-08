@@ -98,25 +98,34 @@ public class AlgorithmicExercises {
 
     /**
      * This method determines is the number armstrong or not.
-     * If sum of cubes of each digit of the number is equal
-     * to the number itself, then the number is called an Armstrong number.
-     * For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5 * 5 ) + ( 3 * 3 * 3 )
+     * An Armstrong number is defined as the sum of n-th
+     * power of each digit to a n-digit number is equal to that number.
+     * For example, 153 = (1 * 1 * 1) + (5 * 5 * 5) + (3 * 3 * 3).
      *
      * @param number int number
      * @return true if the number is armstrong, false otherwise.
      */
     public boolean isArmstrong(int number) {
-        int tempNumber = number;
-
-        if (number < 10 && number > -10) {
+        if (number < 0) {
             return false;
         }
+        if (number < 10) {
+            return true;
+        }
 
+        int tempNumber = number;
+        int countOfDigits = 0;
+        while (tempNumber > 0) {
+            tempNumber /= 10;
+            countOfDigits++;
+        }
+
+        tempNumber = number;
         int sum = 0;
         int currentDigit = 0;
         while (tempNumber > 0) {
             currentDigit = tempNumber % 10;
-            sum += Math.pow(currentDigit, 3);
+            sum += Math.pow(currentDigit, countOfDigits);
             tempNumber /= 10;
         }
         return number == sum;
