@@ -180,7 +180,7 @@ public class AlgorithmicExercises {
      * This method calculates sine of any number.
      * sin x = x - x^3/3! + x^5/5! - x^7/7! + ... x^n/n!
      *
-     * @param number     double number.
+     * @param number     double number. Converting to radians.
      * @param correction int number, calculation correcting.
      * @return sine of number.
      */
@@ -197,7 +197,7 @@ public class AlgorithmicExercises {
      * This method calculates cosine of any number.
      * cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... x^n/n!
      *
-     * @param number     double number.
+     * @param number     double number. Converting to radians.
      * @param correction int number, calculation correcting.
      * @return cosine of number.
      */
