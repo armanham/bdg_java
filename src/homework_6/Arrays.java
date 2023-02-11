@@ -153,16 +153,21 @@ public class Arrays {
     }
 
 
-    //TODO printNonRepeatingTriplets()
+    /**
+     * This method prints all non-repeating triplets in array.
+     *
+     * @param array int[] array.
+     */
     public static void printNonRepeatingTriplets(int[] array) {
         if (array.length < 3) {
             System.out.println("Passed array must have three and more elements:");
         }
 
-        int[][] triplets = new int[array.length][array.length];
         for (int i = 0; i < array.length - 2; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-
+            for (int j = i + 1; j < array.length - 1; j++) {
+                for (int k = j + 1; k < array.length; k++) {
+                    System.out.println(array[i] + " " + array[j] + " " + array[k]);
+                }
             }
         }
     }
