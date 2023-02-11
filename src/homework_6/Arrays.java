@@ -252,9 +252,43 @@ public class Arrays {
     }
 
 
-    //TODO
-    //12  Տպել տրված թվերի հաջորդականության ամենաերկար աճող .
-    //ենթահաջորդականությունը:
+    /**
+     * This method finds the longest sequence in non-decreasing order of array.
+     *
+     * @param array int[] array.
+     * @return new array the of the longest sequence in non-decreasing order of array.
+     */
+    public static int[] longestNonDecreasingSequence(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Passed array has no elements:");
+            return array;
+        }
+
+        int k = 0;
+        int longestK = 0;
+        int startIndex = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] <= array[i + 1]) {
+                k++;
+            } else {
+                k = 0;
+            }
+            if (k == 1 && longestK <= k) {
+                startIndex = i;
+            }
+            if (longestK <= k) {
+                longestK = k;
+            }
+        }
+
+        int[] newArray = new int[longestK + 1];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[startIndex];
+            startIndex++;
+        }
+
+        return newArray;
+    }
 
 
     /**
@@ -264,6 +298,11 @@ public class Arrays {
      * @return decimal value of binary array.
      */
     public static int binaryToDecimal(int[] zerosAndOnes) {
+        if (zerosAndOnes.length == 0) {
+            System.out.println("Passed array has no elements:");
+            return 0;
+        }
+
         int sum = 0;
         int k = 0;
         for (int i = zerosAndOnes.length - 1; i >= 0; i--) {
@@ -275,5 +314,81 @@ public class Arrays {
             k++;
         }
         return sum;
+    }
+
+
+    /**
+     * This method prints all elements above the main diagonal of matrix.
+     *
+     * @param matrix int[][] matrix.
+     */
+    public static void printElementsAboveMainDiagonal(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            System.out.println("Passed matrix must be square matrix, and must have elements:");
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (j > i) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
+    /**
+     * This method inverts the square matrix with respect to the main diagonal.
+     *
+     * @param matrix int[][] matrix.
+     * @return matrix inverted with respect to the main diagonal.
+     */
+    public static int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            System.out.println("Passed matrix must be square matrix, and must have elements:");
+        }
+
+        int temp;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (j > i) {
+                    temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
+                }
+            }
+        }
+        return matrix;
+    }
+
+
+    /**
+     * This method checks whether the sums of the
+     * elements of all the rows of the matrix are even or not.
+     *
+     * @param matrix int[][] matrix
+     * @return true if the sums of the elements of all the rows
+     * of the matrix are even, false otherwise.
+     */
+    public static boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
+            System.out.println("Passed matrix must be square matrix, and must have elements:");
+        }
+
+        int k = 0;
+        int sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                sum += matrix[i][j];
+            }
+            if (sum % 2 == 0) {
+                k++;
+            }
+            if (k != i + 1) {
+                break;
+            }
+        }
+        return k == matrix.length;
     }
 }
