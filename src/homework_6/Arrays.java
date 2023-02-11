@@ -330,6 +330,7 @@ public class Arrays {
     public static void printElementsAboveMainDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
+            return;
         }
 
         for (int i = 0; i < matrix.length; i++) {
@@ -352,6 +353,7 @@ public class Arrays {
     public static int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
+            return matrix;
         }
 
         int temp;
@@ -379,6 +381,7 @@ public class Arrays {
     public static boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
+            return false;
         }
 
         int k = 0;
@@ -396,4 +399,11 @@ public class Arrays {
         }
         return k == matrix.length;
     }
+
+
+//    public static int sumOfLeftDiagonal(int[][] matrix) {
+//        if (matrix.length == 0 || matrix[0].length == 0) {
+//            System.out.println("Passed matrix must be square matrix, and must have elements:");
+//            return 0;
+//        }
 }
