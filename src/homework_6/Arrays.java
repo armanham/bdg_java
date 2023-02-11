@@ -200,6 +200,32 @@ public class Arrays {
 
 
     /**
+     * This method sorts the array in ascending order.
+     *
+     * @param array int[] array.
+     * @return array already sorted in ascending order.
+     */
+    public static int[] sortAscendingOrder(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Passed array has no elements:");
+            return array;
+        }
+
+        int temp;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] <= array[j]) {
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+
+    /**
      * This method moves odd elements in the end of array.
      *
      * @param array int[] array.
@@ -323,12 +349,56 @@ public class Arrays {
 
 
     /**
+     * This method finds the smallest element of array.
+     *
+     * @param array int[] array.
+     * @return the smallest element of array.
+     */
+    public static int minElementOf(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Passed array has no elements:");
+            return 0;
+        }
+
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (min >= array[i]) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+
+    /**
+     * This method finds the largest element of array.
+     *
+     * @param array int[] array.
+     * @return the largest element of array.
+     */
+    public static int maxElementOf(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Passed array has no elements:");
+            return 0;
+        }
+
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (max <= array[i]) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+
+    /**
      * This method prints all elements above the main diagonal of matrix.
      *
      * @param matrix int[][] matrix.
      */
     public static void printElementsAboveMainDiagonal(int[][] matrix) {
-        if (matrix.length == 0 || matrix[0].length == 0) {
+        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return;
         }
@@ -351,7 +421,7 @@ public class Arrays {
      * @return matrix inverted with respect to the main diagonal.
      */
     public static int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
-        if (matrix.length == 0 || matrix[0].length == 0) {
+        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return matrix;
         }
@@ -379,7 +449,7 @@ public class Arrays {
      * of the matrix are even, false otherwise.
      */
     public static boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
-        if (matrix.length == 0 || matrix[0].length == 0) {
+        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return false;
         }
@@ -401,9 +471,50 @@ public class Arrays {
     }
 
 
-//    public static int sumOfLeftDiagonal(int[][] matrix) {
-//        if (matrix.length == 0 || matrix[0].length == 0) {
-//            System.out.println("Passed matrix must be square matrix, and must have elements:");
-//            return 0;
-//        }
+    /**
+     * This method calculates sum of elements of principal diagonal of matrix.
+     *
+     * @param matrix int[][] matrix.
+     * @return the sum of principal diagonal.
+     */
+    public static int sumOfPrincipalDiagonal(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+            System.out.println("Passed matrix must be square matrix, and must have elements:");
+            return 0;
+        }
+
+        int sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (i == j) {
+                    sum += matrix[i][i];
+                }
+            }
+        }
+        return sum;
+    }
+
+
+    /**
+     * This method calculates sum of elements of secondary diagonal of matrix.
+     *
+     * @param matrix int[][] matrix.
+     * @return the sum of secondary diagonal.
+     */
+    public static int sumOfSecondaryDiagonal(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+            System.out.println("Passed matrix must be square matrix, and must have elements:");
+            return 0;
+        }
+
+        int sum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (i + j == matrix.length - 1) {
+                    sum += matrix[i][j];
+                }
+            }
+        }
+        return sum;
+    }
 }
