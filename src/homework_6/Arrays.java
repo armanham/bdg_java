@@ -263,20 +263,18 @@ public class Arrays {
             return array;
         }
 
-        int countOfZeros = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] == 0) {
-                for (int j = i; j < array.length - 1; j++) {
-                    array[j] = array[j + 1];
-                }
-                countOfZeros++;
+        int countOfNoZeros = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != 0) {
+                countOfNoZeros++;
             }
         }
 
-        int[] newArray = new int[array.length - countOfZeros];
-        for (int i = 0; i < array.length - countOfZeros; i++) {
+        int[] newArray = new int[countOfNoZeros];
+        for (int i = 0, j = 0; i < array.length; i++) {
             if (array[i] != 0) {
-                newArray[i] = array[i];
+                newArray[j] = array[i];
+                j++;
             }
         }
         return newArray;
