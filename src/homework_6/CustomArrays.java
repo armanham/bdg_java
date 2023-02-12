@@ -1,6 +1,6 @@
 package homework_6;
 
-public class Arrays {
+public class CustomArrays {
 
     /**
      * This method prints positive numbers of array.
