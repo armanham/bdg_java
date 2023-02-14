@@ -462,7 +462,7 @@ public class CustomArrays {
                 k++;
             }
             if (k != i + 1) {
-                break;
+                return false;
             }
         }
         return k == matrix.length;
