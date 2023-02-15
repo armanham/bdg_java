@@ -1,5 +1,9 @@
 package homework_6;
 
+import homework_5.AlgorithmicExercises;
+
+import java.util.Arrays;
+
 public class CustomArrays {
 
     /**
@@ -158,18 +162,56 @@ public class CustomArrays {
      *
      * @param array int[] array.
      */
-    public void printNonRepeatingTriplets(int[] array) {
+    public int[][] nonRepeatingTriplets(int[] array) {
         if (array.length < 3) {
             System.out.println("Passed array must have three and more elements:");
         }
 
+        AlgorithmicExercises ae = new AlgorithmicExercises();
+        int rowsOfNonRepeatingMatrix = (int) (ae.factorialOf(array.length) /
+                (ae.factorialOf(array.length - 3) * ae.factorialOf(3)));
+        int[] arrayOfThree = new int[3];
+        int[][] nonRepeatingMatrix = new int[rowsOfNonRepeatingMatrix][3];
+        int l = 0;
+
         for (int i = 0; i < array.length - 2; i++) {
             for (int j = i + 1; j < array.length - 1; j++) {
                 for (int k = j + 1; k < array.length; k++) {
-                    System.out.println(array[i] + " " + array[j] + " " + array[k]);
+                    arrayOfThree[0] = array[i];
+                    arrayOfThree[1] = array[j];
+                    arrayOfThree[2] = array[k];
+                    if (!isPresent(arrayOfThree, nonRepeatingMatrix)) {
+                        nonRepeatingMatrix[l] = arrayOfThree;
+                        l++;
+                        arrayOfThree = new int[3];
+                    }
                 }
             }
         }
+        return nonRepeatingMatrix;
+    }
+
+
+    /**
+     * This method determines is the passed array presents in the matrix.
+     *
+     * @param array  int[] array.
+     * @param matrix int[][] matrix.
+     * @return true if the array presents in the matrix, false otherwise.
+     */
+    public boolean isPresent(int[] array, int[][] matrix) {
+        if (array.length == 0 || matrix.length == 0 || matrix[0].length == 0) {
+            System.out.println("Passed array and matrix must have elements:");
+            return false;
+        }
+
+        int quantity = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (Arrays.equals(sortAscendingOrder(array), sortAscendingOrder(matrix[i]))) {
+                quantity++;
+            }
+        }
+        return quantity != 0;
     }
 
 
