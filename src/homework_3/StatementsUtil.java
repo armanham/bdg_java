@@ -55,9 +55,9 @@ public class StatementsUtil {
     }
 
     /**
-     * This method determines whether a number is even or odd
+     * This method determines whether a number is even or odd.
      *
-     * @param number int number
+     * @param number int number.
      */
     public void numberOddOrEven(int number) {
         if (number % 2 == 0) {
@@ -69,9 +69,9 @@ public class StatementsUtil {
 
 
     /**
-     * This method determines whether a number is positive or negative or zero
+     * This method determines whether a number is positive or negative or zero.
      *
-     * @param number int number
+     * @param number int number.
      */
     public void numberPositiveOrNegativeOrZero(int number) {
         if (number == 0) {
@@ -96,11 +96,11 @@ public class StatementsUtil {
 
 
     /**
-     * This method determines whether a number is multiple of 5 and 7
+     * This method determines whether a number is multiple of 5 and 7.
      *
-     * @param number int number
+     * @param number int number.
      * @return true if the number is multiple of 5 and 7,
-     * false otherwise
+     * false otherwise.
      */
     public boolean isMultipleOf5And7(int number) {
         return (number % 5 == 0) && (number % 7 == 0);
@@ -108,10 +108,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method determines whether the second digit of three-digit number is 7
+     * This method determines whether the second digit of three-digit number is 7.
      *
-     * @param number int three-digit number
-     * @return true if the second digit of number is 7, false otherwise
+     * @param number int three-digit number.
+     * @return true if the second digit of number is 7, false otherwise.
      */
     public boolean isSecondDigitOfThreeDigitNumber7(int number) {
         if (number < 100 || number > 999) {
@@ -123,13 +123,13 @@ public class StatementsUtil {
 
 
     /**
-     * This method determines does the point belong to the circle
-     * The coordinates for centre of circle is (0; 0)
+     * This method determines does the point belong to the circle.
+     * The coordinates for centre of circle is (0; 0).
      *
-     * @param x      horizontal coordinate of point
-     * @param y      vertical coordinate of point
-     * @param radius int number, radius of circle
-     * @return true if the point belongs to the circle, false otherwise
+     * @param x      horizontal coordinate of point.
+     * @param y      vertical coordinate of point.
+     * @param radius int number, radius of circle.
+     * @return true if the point belongs to the circle, false otherwise.
      */
     public boolean isPointBelongCircle(int x, int y, int radius) {
         if (radius <= 0) {
@@ -143,12 +143,12 @@ public class StatementsUtil {
 
 
     /**
-     * This method finds the largest number among any three numbers
+     * This method finds the largest number among any three numbers.
      *
-     * @param a int number
-     * @param b int number
-     * @param c int number
-     * @return maximum of a, b, c
+     * @param a int number.
+     * @param b int number.
+     * @param c int number.
+     * @return maximum of a, b, c.
      */
     public int maxValueOf(int a, int b, int c) {
         if (a >= b && a >= c) {
@@ -162,12 +162,12 @@ public class StatementsUtil {
 
 
     /**
-     * This method finds the smallest number among any three numbers
+     * This method finds the smallest number among any three numbers.
      *
-     * @param a int number
-     * @param b int number
-     * @param c int number
-     * @return minimum of a, b, c
+     * @param a int number.
+     * @param b int number.
+     * @param c int number.
+     * @return minimum of a, b, c.
      */
     public int minValueOf(int a, int b, int c) {
         if (a <= b && a <= c) {
@@ -181,10 +181,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method determines is the year leap or not
+     * This method determines is the year leap or not.
      *
-     * @param year int number
-     * @return true if the year is leap, false otherwise
+     * @param year int number.
+     * @return true if the year is leap, false otherwise.
      */
     public boolean isLeapYear(int year) {
         //return Year.isLeap(year);
@@ -197,7 +197,7 @@ public class StatementsUtil {
 
 
     /**
-     * This method prints from 1 to 200 numbers
+     * This method prints from 1 to 200 numbers.
      */
     public void printNumbersFrom1to200() {
         for (int i = 1; i <= 200; i++) {
@@ -207,10 +207,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method prints first digit of any positive number
+     * This method prints first digit of any positive number.
      *
-     * @param number int number
-     * @return the first digit of number
+     * @param number int number.
+     * @return the first digit of number.
      */
     public int firstDigitOf(int number) {
         if (number <= 0) {
@@ -233,9 +233,9 @@ public class StatementsUtil {
 
 
     /**
-     * This method prints square with wildcards(*)
+     * This method prints square with wildcards(*).
      *
-     * @param side int number, the side of square
+     * @param side int number, the side of square.
      */
     public void printSquare(int side) {
         for (int i = 0; i < side; i++) {
@@ -248,10 +248,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method counts the sum of multiples of 5
+     * This method counts the sum of multiples of 5.
      *
-     * @param end int number, last number of [1; end] sequence
-     * @return the sum of multiples of 5
+     * @param end int number, last number of [1; end] sequence.
+     * @return the sum of multiples of 5.
      */
     public int sumOfMultiplesOf5(int end) {
         if (end <= 0) {                //ավելի ճիշտ կլիներ օգտագործել exception
@@ -269,10 +269,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method counts of multiple of two-digit and even numbers
+     * This method counts of multiple of two-digit and even numbers.
      *
-     * @param end int number, last number of [1; end] sequence
-     * @return multiple of two-digit and even numbers
+     * @param end int number, last number of [1; end] sequence.
+     * @return multiple of two-digit and even numbers.
      */
     public BigDecimal multipleOfTwoDigitEvenNumbers(int end) {
         if (end <= 10) {           //ավելի ճիշտ կլիներ օգտագործել exception
@@ -306,10 +306,10 @@ public class StatementsUtil {
     //իսկ ընդհանուր դեպքի(խառը թվերի) համար պետք ա ցիկլ
 
     /**
-     * This method counts average sum of min and max values of [1; end] sequence
+     * This method counts average sum of min and max values of [1; end] sequence.
      *
-     * @param end int number, last number of [1; end]
-     * @return the average sum of min and max values of [1; end]
+     * @param end int number, last number of [1; end].
+     * @return the average sum of min and max values of [1; end].
      */
     public double averageSumOfMaxAndMinValuesOf(int end) {
         if (end <= 1) {                //ավելի ճիշտ կլիներ օգտագործել exception
@@ -321,10 +321,10 @@ public class StatementsUtil {
 
 
     /**
-     * This method counts sum of digits of any five-digit and positive number
+     * This method counts sum of digits of any five-digit and positive number.
      *
-     * @param number int number
-     * @return the sum of digits of number
+     * @param number int number.
+     * @return the sum of digits of number.
      */
     public int sumOfDigitsOfFiveDigitNumber(int number) {
         if (number < 10000 || number > 99999) {

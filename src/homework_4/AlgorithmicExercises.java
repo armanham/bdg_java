@@ -67,7 +67,7 @@ public class AlgorithmicExercises {
 //    and big rice bags (5 kilos each), write a method that returns true
 //    if it is possible to make a package with goal kilos of rice.
 
-    public static boolean isPossibleMakePackage(int countOfFiveKiloPackages, int countOfOneKiloPackages, int totalWeight) {
+    public boolean isPossibleMakePackage(int countOfFiveKiloPackages, int countOfOneKiloPackages, int totalWeight) {
         if ((countOfFiveKiloPackages <= 0) || (countOfOneKiloPackages <= 0) || (totalWeight <= 0)) {
             System.out.println("All three parameters must be positive numbers:");
             return false;
@@ -81,10 +81,10 @@ public class AlgorithmicExercises {
 
     /**
      * This method finds the largest prime factor of number.
-     * @param number int number, must be > 1
-     * @return the largest prime factor of number
+     * @param number int number, must be > 1.
+     * @return the largest prime factor of number.
      */
-    public static int largestPrimeFactorOf(int number) {
+    public int largestPrimeFactorOf(int number) {
         if (number <= 1) {
             System.out.println("Only >1 numbers have prime divisors");
             return 0;
@@ -105,7 +105,7 @@ public class AlgorithmicExercises {
      * @param number int number.
      * @return true if the number is prime, false otherwise.
      */
-    public static boolean isPrime(int number) {
+    public boolean isPrime(int number) {
         if (number <= 0) {
             System.out.println("Only positive numbers can be prime:");
             return false;

@@ -3,9 +3,9 @@ package homework_5;
 public class AlgorithmicExercises {
 
     /**
-     * This method prints multiplication table for any number
+     * This method prints multiplication table for any number.
      *
-     * @param number int number
+     * @param number int number.
      */
     public void printMultiplicationTableOf(int number) {
         for (int i = 1; i <= 10; i++) {
@@ -15,11 +15,11 @@ public class AlgorithmicExercises {
 
 
     /**
-     * Returns the value of the first argument raised to the power of the second argument
+     * Returns the value of the first argument raised to the power of the second argument.
      *
-     * @param number   int number
-     * @param exponent int number
-     * @return the value of number^exponent
+     * @param number   int number.
+     * @param exponent int number.
+     * @return the value of number^exponent.
      */
     public double pow(int number, int exponent) {
         double temp = number;
@@ -45,10 +45,10 @@ public class AlgorithmicExercises {
 
 
     /**
-     * This method reverses any integer number
+     * This method reverses any integer number.
      *
-     * @param number int number
-     * @return String of reversed number
+     * @param number int number.
+     * @return String of reversed number.
      */
     public String reverse(int number) {
         if (number > -10 && number < 10) {
@@ -70,7 +70,8 @@ public class AlgorithmicExercises {
     //Access-modifier-ը private եմ դրել քանի որ որովհետև մտածում եմ իմաստ չկա էս
     //մեթոդին այլ տեղերից հասանելիություն ունենալ,որովհետև արդեն կա գրված տվյալ մեթոդից:
     private void isPrime(int number) {
-        System.out.println(homework_4.AlgorithmicExercises.isPrime(number));
+        homework_4.AlgorithmicExercises ae = new homework_4.AlgorithmicExercises();
+        System.out.println(ae.isPrime(number));
     }
 
 
@@ -102,7 +103,7 @@ public class AlgorithmicExercises {
      * power of each digit to a n-digit number is equal to that number.
      * For example, 153 = (1 * 1 * 1) + (5 * 5 * 5) + (3 * 3 * 3).
      *
-     * @param number int number
+     * @param number int number.
      * @return true if the number is armstrong, false otherwise.
      */
     public boolean isArmstrong(int number) {
@@ -178,7 +179,7 @@ public class AlgorithmicExercises {
 
     /**
      * This method calculates sine of any number.
-     * sin x = x - x^3/3! + x^5/5! - x^7/7! + ... x^n/n!
+     * sin x = x - x^3/3! + x^5/5! - x^7/7! + ... x^n/n!.
      *
      * @param number     double number. Converting to radians.
      * @param correction int number, calculation correcting.
@@ -195,7 +196,7 @@ public class AlgorithmicExercises {
 
     /**
      * This method calculates cosine of any number.
-     * cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... x^n/n!
+     * cos x = 1 - x^2/2! + x^4/4! - x^6/6! + ... x^n/n!.
      *
      * @param number     double number. Converting to radians.
      * @param correction int number, calculation correcting.
@@ -211,10 +212,10 @@ public class AlgorithmicExercises {
 
 
     /**
-     * This method calculates factorial of any number
+     * This method calculates factorial of any number.
      *
-     * @param number int number
-     * @return the factorial of any number
+     * @param number int number.
+     * @return the factorial of any number.
      */
     public long factorialOf(int number) {
         int result = 1;

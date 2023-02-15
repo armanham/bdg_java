@@ -7,7 +7,7 @@ public class CustomArrays {
      *
      * @param array int[] array.
      */
-    public static void printPositiveNumbers(int[] array) {
+    public void printPositiveNumbers(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements: ");
             return;
@@ -26,7 +26,7 @@ public class CustomArrays {
      *
      * @param array short[] array.
      */
-    public static void printReversedArray(short[] array) {
+    public void printReversedArray(short[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements: ");
             return;
@@ -43,7 +43,7 @@ public class CustomArrays {
      *
      * @param array long[] array.
      */
-    public static void printLargestNumber(long[] array) {
+    public void printLargestNumber(long[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements: ");
             return;
@@ -64,7 +64,7 @@ public class CustomArrays {
      *
      * @param array float[] array.
      */
-    public static void printSmallestNumber(float[] array) {
+    public void printSmallestNumber(float[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements: ");
             return;
@@ -87,7 +87,7 @@ public class CustomArrays {
      * @param array    int[] array, original array.
      * @param newArray int[] array, new array after the move.
      */
-    public static void moveElementsToAnotherArray(int[] array, int[] newArray) {
+    public void moveElementsToAnotherArray(int[] array, int[] newArray) {
         if (array.length == 0) {
             System.out.println("The original array has no elements: ");
             return;
@@ -111,7 +111,7 @@ public class CustomArrays {
      * @param array2 int[] array.
      * @return the sum array of array1 and array2.
      */
-    public static int[] sum(int[] array1, int[] array2) {
+    public int[] sum(int[] array1, int[] array2) {
         int[] sumOfArrays = new int[array1.length];
 
         if (array1.length == 0 || array2.length == 0) {
@@ -137,7 +137,7 @@ public class CustomArrays {
      * @param number int number.
      * @return count how many times the given number occurs in the array.
      */
-    public static int countOfNumberInArray(int[] array, int number) {
+    public int countOfNumberInArray(int[] array, int number) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return 0;
@@ -158,7 +158,7 @@ public class CustomArrays {
      *
      * @param array int[] array.
      */
-    public static void printNonRepeatingTriplets(int[] array) {
+    public void printNonRepeatingTriplets(int[] array) {
         if (array.length < 3) {
             System.out.println("Passed array must have three and more elements:");
         }
@@ -179,7 +179,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return array already sorted in descending order.
      */
-    public static int[] sortDescendingOrder(int[] array) {
+    public int[] sortDescendingOrder(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
@@ -205,7 +205,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return array already sorted in ascending order.
      */
-    public static int[] sortAscendingOrder(int[] array) {
+    public int[] sortAscendingOrder(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
@@ -231,7 +231,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return already sorted array: odd elements already moved in the end.
      */
-    public static int[] sortOddElementsInTheEnd(int[] array) {
+    public int[] sortOddElementsInTheEnd(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
@@ -257,7 +257,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return new array from original, without zeros.
      */
-    public static int[] removeZeros(int[] array) {
+    public int[] removeZeros(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
@@ -287,7 +287,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return new array the of the longest sequence in non-decreasing order of array.
      */
-    public static int[] longestNonDecreasingSequence(int[] array) {
+    public int[] longestNonDecreasingSequence(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
@@ -326,7 +326,7 @@ public class CustomArrays {
      * @param zerosAndOnes int[] number, elements must be only 0 and 1.
      * @return decimal value of binary array.
      */
-    public static int binaryToDecimal(int[] zerosAndOnes) {
+    public int binaryToDecimal(int[] zerosAndOnes) {
         if (zerosAndOnes.length == 0) {
             System.out.println("Passed array has no elements:");
             return 0;
@@ -352,7 +352,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return the smallest element of array.
      */
-    public static int minElementOf(int[] array) {
+    public int minElementOf(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return 0;
@@ -374,7 +374,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return the largest element of array.
      */
-    public static int maxElementOf(int[] array) {
+    public int maxElementOf(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return 0;
@@ -395,7 +395,7 @@ public class CustomArrays {
      *
      * @param matrix int[][] matrix.
      */
-    public static void printElementsAboveMainDiagonal(int[][] matrix) {
+    public void printElementsAboveMainDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return;
@@ -418,7 +418,7 @@ public class CustomArrays {
      * @param matrix int[][] matrix.
      * @return matrix inverted with respect to the main diagonal.
      */
-    public static int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
+    public int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return matrix;
@@ -446,7 +446,7 @@ public class CustomArrays {
      * @return true if the sums of the elements of all the rows
      * of the matrix are even, false otherwise.
      */
-    public static boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
+    public boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return false;
@@ -475,7 +475,7 @@ public class CustomArrays {
      * @param matrix int[][] matrix.
      * @return the sum of principal diagonal.
      */
-    public static int sumOfPrincipalDiagonal(int[][] matrix) {
+    public int sumOfPrincipalDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return 0;
@@ -499,7 +499,7 @@ public class CustomArrays {
      * @param matrix int[][] matrix.
      * @return the sum of secondary diagonal.
      */
-    public static int sumOfSecondaryDiagonal(int[][] matrix) {
+    public int sumOfSecondaryDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return 0;

@@ -1,5 +1,7 @@
 package homework_3;
 
+import homework_2.Application;
+
 /**
  * @author Arman Hambardzumyan
  */
@@ -128,7 +130,8 @@ public class OperatorsUtil {
 
         //Գրել ծրագիր, որը հաշվում է  1-100 թվերի գումարը
         //I already have this method for all [int a; int b] cases in homework_2.Application (PS. sorry for my english)
-        System.out.println("Sum of [1; 100]: " + homework_2.Application.sumOfSequenceOfNaturalNumbers(1, 100) + "\n");
+        Application ap = new Application();
+        System.out.println("Sum of [1; 100]: " + ap.sumOfSequenceOfNaturalNumbers(1, 100) + "\n");
 
 
         System.out.println("---Bitwise & Logical Operators---");
