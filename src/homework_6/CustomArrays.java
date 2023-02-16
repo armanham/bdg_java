@@ -167,12 +167,23 @@ public class CustomArrays {
             System.out.println("Passed array must have three and more elements:");
         }
 
+        int quantityOfZeros = 0;
+        for (int items : array) {
+            if (items == 0) {
+                quantityOfZeros++;
+            }
+        }
+
         AlgorithmicExercises ae = new AlgorithmicExercises();
         int rowsOfNonRepeatingMatrix = (int) (ae.factorialOf(array.length) /
                 (ae.factorialOf(array.length - 3) * ae.factorialOf(3)));
         int[] arrayOfThree = new int[3];
         int[][] nonRepeatingMatrix = new int[rowsOfNonRepeatingMatrix][3];
         int l = 0;
+
+        if (quantityOfZeros >= 3) {
+            l = 1;
+        }
 
         for (int i = 0; i < array.length - 2; i++) {
             for (int j = i + 1; j < array.length - 1; j++) {
@@ -188,7 +199,14 @@ public class CustomArrays {
                 }
             }
         }
-        return nonRepeatingMatrix;
+
+        int[][] nonRepeatingMatrixWithoutZeros = new int[l][3];
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < 3; j++) {
+                nonRepeatingMatrixWithoutZeros[i][j] = nonRepeatingMatrix[i][j];
+            }
+        }
+        return nonRepeatingMatrixWithoutZeros;
     }
 
 
@@ -556,5 +574,20 @@ public class CustomArrays {
             }
         }
         return sum;
+    }
+
+
+    /**
+     * This method prints matrix.
+     *
+     * @param matrix int[][] matrix.
+     */
+    public void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
