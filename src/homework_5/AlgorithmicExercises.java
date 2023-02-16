@@ -85,10 +85,10 @@ public class AlgorithmicExercises {
         int min = array[0];
         int max = array[0];
         for (int i = 1; i < lengthOfArray; i++) {
-            if (min >= array[i]) {
+            if (min > array[i]) {
                 min = array[i];
             }
-            if (max <= array[i]) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }

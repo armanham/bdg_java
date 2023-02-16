@@ -55,7 +55,7 @@ public class CustomArrays {
 
         long max = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (max <= array[i]) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }
@@ -76,7 +76,7 @@ public class CustomArrays {
 
         float min = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (min >= array[i]) {
+            if (min > array[i]) {
                 min = array[i];
             }
         }
@@ -139,9 +139,9 @@ public class CustomArrays {
      *
      * @param array  int[] array.
      * @param number int number.
-     * @return count how many times the given number occurs in the array.
+     * @return count of how many times the given number occurs in the array.
      */
-    public int countOfNumberInArray(int[] array, int number) {
+    public int countOfNumberInArray(int number, int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return 0;
@@ -167,22 +167,17 @@ public class CustomArrays {
             System.out.println("Passed array must have three and more elements:");
         }
 
-        int quantityOfZeros = 0;
-        for (int items : array) {
-            if (items == 0) {
-                quantityOfZeros++;
-            }
-        }
+        int countOfZeros = countOfNumberInArray(0, array);
 
         AlgorithmicExercises ae = new AlgorithmicExercises();
-        int rowsOfNonRepeatingMatrix = (int) (ae.factorialOf(array.length) /
+        int possibleCountOfRows = (int) (ae.factorialOf(array.length) /
                 (ae.factorialOf(array.length - 3) * ae.factorialOf(3)));
         int[] arrayOfThree = new int[3];
-        int[][] nonRepeatingMatrix = new int[rowsOfNonRepeatingMatrix][3];
-        int l = 0;
+        int[][] nonRepeatingMatrix = new int[possibleCountOfRows][3];
 
-        if (quantityOfZeros >= 3) {
-            l = 1;
+        int countOfRows = 0;
+        if (countOfZeros >= 3) {
+            countOfRows = 1;
         }
 
         for (int i = 0; i < array.length - 2; i++) {
@@ -192,16 +187,16 @@ public class CustomArrays {
                     arrayOfThree[1] = array[j];
                     arrayOfThree[2] = array[k];
                     if (!isPresent(arrayOfThree, nonRepeatingMatrix)) {
-                        nonRepeatingMatrix[l] = arrayOfThree;
-                        l++;
+                        nonRepeatingMatrix[countOfRows] = arrayOfThree;
+                        countOfRows++;
                         arrayOfThree = new int[3];
                     }
                 }
             }
         }
 
-        int[][] nonRepeatingMatrixWithoutZeros = new int[l][3];
-        for (int i = 0; i < l; i++) {
+        int[][] nonRepeatingMatrixWithoutZeros = new int[countOfRows][3];
+        for (int i = 0; i < countOfRows; i++) {
             for (int j = 0; j < 3; j++) {
                 nonRepeatingMatrixWithoutZeros[i][j] = nonRepeatingMatrix[i][j];
             }
@@ -212,6 +207,7 @@ public class CustomArrays {
 
     /**
      * This method determines is the passed array presents in the matrix.
+     * The order doesn't matter.
      *
      * @param array  int[] array.
      * @param matrix int[][] matrix.
@@ -246,12 +242,12 @@ public class CustomArrays {
         }
 
         int temp;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] >= array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
@@ -272,12 +268,12 @@ public class CustomArrays {
         }
 
         int temp;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] <= array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
@@ -375,7 +371,6 @@ public class CustomArrays {
             newArray[i] = array[startIndex];
             startIndex++;
         }
-
         return newArray;
     }
 
@@ -420,7 +415,7 @@ public class CustomArrays {
 
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
-            if (min >= array[i]) {
+            if (min > array[i]) {
                 min = array[i];
             }
         }
@@ -442,7 +437,7 @@ public class CustomArrays {
 
         int max = array[0];
         for (int i = 0; i < array.length; i++) {
-            if (max <= array[i]) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }
