@@ -6,6 +6,13 @@ import java.util.List;
 
 public class StringUtil {
 
+    /**
+     * This method concatenates the arguments in the String.
+     *
+     * @param str1 String str1.
+     * @param str2 String str2.
+     * @return new concatenated String.
+     */
     public String concat(String str1, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
             System.out.println("Passed null value for one or both of String-type parameters or passed empty line:");
@@ -15,6 +22,14 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the String.
+     *
+     * @param num1 int num1.
+     * @param num2 int num2.
+     * @param str  String str.
+     * @return new concatenated String.
+     */
     public String concat(int num1, int num2, String str) {
         if (isNullOrEmpty(str)) {
             System.out.println("Passed null value for String-type parameter or passed empty line:");
@@ -24,6 +39,14 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the String.
+     *
+     * @param str1 String str1.
+     * @param num  int num.
+     * @param str2 String str2.
+     * @return new concatenated String.
+     */
     public String concat(String str1, int num, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
             System.out.println("Passed null value for one or both of String-type parameters or passed empty line:");
@@ -33,6 +56,15 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the String.
+     *
+     * @param str1 String str1.
+     * @param num1 int num1.
+     * @param num2 int num2.
+     * @param str2 String str2.
+     * @return new concatenated String.
+     */
     public String concat(String str1, int num1, int num2, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
@@ -42,6 +74,13 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the StringBuilder.
+     *
+     * @param str1 StringBuilder str1.
+     * @param str2 StringBuilder str2.
+     * @return 1st StringBuilder-type argument already concatenated with others.
+     */
     public StringBuilder concat(StringBuilder str1, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
@@ -51,6 +90,14 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the StringBuilder.
+     *
+     * @param num1 int num1.
+     * @param num2 int num2.
+     * @param str  StringBuilder str.
+     * @return 1st StringBuilder-type argument already concatenated with others.
+     */
     public StringBuilder concat(int num1, int num2, StringBuilder str) {
         if (isNullOrEmpty(String.valueOf(str))) {
             System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
@@ -60,6 +107,14 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the StringBuilder.
+     *
+     * @param str1 StringBuilder str1.
+     * @param num  int num.
+     * @param str2 StringBuilder str2.
+     * @return 1st StringBuilder-type argument already concatenated with others.
+     */
     public StringBuilder concat(StringBuilder str1, int num, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
@@ -69,6 +124,15 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method concatenates the arguments in the StringBuilder.
+     *
+     * @param str1 StringBuilder str1.
+     * @param num1 int num1.
+     * @param num2 int num2.
+     * @param str2 StringBuilder str2.
+     * @return 1st StringBuilder-type argument already concatenated with others.
+     */
     public StringBuilder concat(StringBuilder str1, int num1, int num2, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
