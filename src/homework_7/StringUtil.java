@@ -368,6 +368,13 @@ public class StringUtil {
     }
 
 
+    /**
+     * This method finds the specified subLine in StringBuilder.
+     *
+     * @param str String str.
+     * @param end int end. [0; str.length()).
+     * @return the subLine.
+     */
     public StringBuilder subLine(StringBuilder str, int end) {
         if (isNullOrEmpty(String.valueOf(str))) {
             System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
