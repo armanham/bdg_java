@@ -1,5 +1,9 @@
 package homework_7;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StringUtil {
 
     public String concat(String str1, String str2) {
@@ -10,6 +14,7 @@ public class StringUtil {
         return str1 + str2;
     }
 
+
     public String concat(int num1, int num2, String str) {
         if (isNullOrEmpty(str)) {
             System.out.println("Passed null value for String-type parameter or passed empty line:");
@@ -17,6 +22,7 @@ public class StringUtil {
         }
         return num1 + num2 + str;
     }
+
 
     public String concat(String str1, int num, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
@@ -26,6 +32,7 @@ public class StringUtil {
         return str1 + num + str2;
     }
 
+
     public String concat(String str1, int num1, int num2, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
@@ -33,6 +40,7 @@ public class StringUtil {
         }
         return str1 + num1 + num2 + str2;
     }
+
 
     public StringBuilder concat(StringBuilder str1, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
@@ -42,6 +50,7 @@ public class StringUtil {
         return str1.append(str2);
     }
 
+
     public StringBuilder concat(int num1, int num2, StringBuilder str) {
         if (isNullOrEmpty(String.valueOf(str))) {
             System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
@@ -50,6 +59,7 @@ public class StringUtil {
         return str.insert(0, num1).insert(1, num2);
     }
 
+
     public StringBuilder concat(StringBuilder str1, int num, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
             System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
@@ -57,6 +67,7 @@ public class StringUtil {
         }
         return str1.append(num).append(str2);
     }
+
 
     public StringBuilder concat(StringBuilder str1, int num1, int num2, StringBuilder str2) {
         if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
@@ -284,6 +295,7 @@ public class StringUtil {
     /**
      * This method finds the longest word in the String.
      * In String a word is the set of characters between two spaces.
+     * If there is two words with equal lengths, then will be returned first word.
      *
      * @param str String str
      * @return the longest word in the String.
@@ -294,33 +306,15 @@ public class StringUtil {
             return null;
         }
 
-        char[] chars = str.toCharArray();
-        int k = 0;
-        int longestK = 0;
-        int startIndex = 0;
+        List<String> listOfWords = new ArrayList<>(Arrays.asList(str.split(" ")));
 
-        for (int i = 0; i < chars.length - 1; i++) {
-            if (chars[i] == ' ') {
-                k++;
-            } else if (chars[i + 1] != ' ') {
-                k++;
-            } else {
-                k = 0;
-            }
-            if (k == 1 && longestK <= k) {
-                startIndex = i;
-            }
-            if (k >= longestK) {
-                longestK = k;
+        String longestWord = listOfWords.get(0);
+        for (int i = 0; i < listOfWords.size(); i++) {
+            if (longestWord.length() < listOfWords.get(i).length()) {
+                longestWord = listOfWords.get(i);
             }
         }
-
-        char[] newChar = new char[longestK];
-        for (int i = 0; i < newChar.length; i++) {
-            newChar[i] = chars[startIndex];
-            startIndex++;
-        }
-        return String.valueOf(newChar);
+        return longestWord;
     }
 
 
@@ -391,6 +385,7 @@ public class StringUtil {
     /**
      * This method finds the longest sentence in the String.
      * In String a word is the set of characters between two ','.
+     * If there is two sentences with equal lengths, then will be returned first sentence..
      *
      * @param str String str
      * @return the longest word in the String.
@@ -401,33 +396,15 @@ public class StringUtil {
             return null;
         }
 
-        char[] chars = str.toCharArray();
-        int k = 0;
-        int longestK = 0;
-        int startIndex = 0;
+        List<String> listOfSentences = new ArrayList<>(Arrays.asList(str.split(",")));
 
-        for (int i = 0; i < chars.length - 1; i++) {
-            if (chars[i] == ',') {
-                k++;
-            } else if (chars[i + 1] != ',') {
-                k++;
-            } else {
-                k = 0;
-            }
-            if (k == 1 && longestK <= k) {
-                startIndex = i;
-            }
-            if (k >= longestK) {
-                longestK = k;
+        String longestSentence = listOfSentences.get(0);
+        for (int i = 0; i < listOfSentences.size(); i++) {
+            if (longestSentence.length() < listOfSentences.get(i).length()) {
+                longestSentence = listOfSentences.get(i);
             }
         }
-
-        char[] newChar = new char[longestK];
-        for (int i = 0; i < newChar.length; i++) {
-            newChar[i] = chars[startIndex];
-            startIndex++;
-        }
-        return String.valueOf(newChar);
+        return longestSentence;
     }
 
 
