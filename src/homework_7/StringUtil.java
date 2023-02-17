@@ -4,78 +4,66 @@ public class StringUtil {
 
     public String concat(String str1, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+            System.out.println("Passed null value for one or both of String-type parameters or passed empty line:");
             return null;
         }
-
         return str1 + str2;
     }
 
     public String concat(int num1, int num2, String str) {
         if (isNullOrEmpty(str)) {
-            System.out.println("Passed null value for String-type parameter:");
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
             return null;
         }
-
         return num1 + num2 + str;
     }
 
     public String concat(String str1, int num, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+            System.out.println("Passed null value for one or both of String-type parameters or passed empty line:");
             return null;
         }
-
         return str1 + num + str2;
     }
 
     public String concat(String str1, int num1, int num2, String str2) {
         if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+            System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
             return null;
         }
-
         return str1 + num1 + num2 + str2;
     }
 
-    public StringBuilder concatBuilder(String str1, String str2) {
-        if (isNullOrEmpty(str2) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+    public StringBuilder concat(StringBuilder str1, StringBuilder str2) {
+        if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
+            System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
             return null;
         }
-
-        StringBuilder newStr = new StringBuilder();
-        return newStr.append(str1).append(str2);
+        return str1.append(str2);
     }
 
-    public StringBuilder concatBuilder(int num1, int num2, String str) {
-        if (isNullOrEmpty(str)) {
-            System.out.println("Passed null value for String-type parameter:");
+    public StringBuilder concat(int num1, int num2, StringBuilder str) {
+        if (isNullOrEmpty(String.valueOf(str))) {
+            System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
             return null;
         }
-
-        StringBuilder newStr = new StringBuilder(String.valueOf(num1));
-        return newStr.append(num2).append(str);
+        return str.insert(0, num1).insert(1, num2);
     }
 
-    public StringBuilder concatBuilder(String str1, int num, String str2) {
-        if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+    public StringBuilder concat(StringBuilder str1, int num, StringBuilder str2) {
+        if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
+            System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
             return null;
         }
-
-        StringBuilder newStr = new StringBuilder(str1);
-        return newStr.append(num).append(str2);
+        return str1.append(num).append(str2);
     }
 
-    public StringBuilder concatBuilder(String str1, int num1, int num2, String str2) {
-        if (isNullOrEmpty(str1) || isNullOrEmpty(str2)) {
-            System.out.println("Passed null value for one or both of String-type parameters:");
+    public StringBuilder concat(StringBuilder str1, int num1, int num2, StringBuilder str2) {
+        if (isNullOrEmpty(String.valueOf(str1)) || isNullOrEmpty(String.valueOf(str2))) {
+            System.out.println("Passed null value for one or both of StringBuilder-type parameters or passed empty line:");
             return null;
         }
-
-        StringBuilder newStr = new StringBuilder(str1);
-        return newStr.append(num1).append(num2).append(str2);
+        return str1.append(num1).append(num2).append(str2);
     }
 
 
@@ -87,7 +75,7 @@ public class StringUtil {
      */
     public String newLineAfterWhiteSpace(String str) {
         if (isNullOrEmpty(str)) {
-            System.out.println("Passed null value for String-type parameter or passed empty line");
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
             return null;
         }
 
@@ -173,25 +161,274 @@ public class StringUtil {
     }
 
 
-    public StringBuilder toUpperCaseBuilder(String str){
+    /**
+     * This method converts lowercase letters to uppercase in StringBuilder.
+     *
+     * @param str StringBuilder str.
+     * @return modified StringBuilder.
+     */
+    public StringBuilder toUpperCase(StringBuilder str) {
+        if (isNullOrEmpty(String.valueOf(str))) {
+            System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
+            return null;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isLowerCase(str.charAt(i))) {
+                str.setCharAt(i, Character.toUpperCase(str.charAt(i)));
+            }
+        }
+        return str;
+    }
+
+
+    // Գրել method,որը console-ից կարդում է 20 երկարությամբ սիմվոլների տող տպում այն, եթե տողի
+    // երկարությունը պակաս է 20ից, ապա պետք է տողը լռացնենք պակաս սիմվոլների փոխարեն գրելով
+    //«*» սիմվոլը
+    public String method(String str) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return null;
+        }
+        if (str.length() >= 20) {
+            return str.substring(0, 20);
+        }
+
+        String newStr = "";
+        for (int i = str.length(); i < 20; i++) {
+            str = str.concat("*");
+            newStr = str;
+        }
+        return newStr;
+    }
+
+
+    /**
+     * This method removes specified character from String.
+     *
+     * @param character char character.
+     * @param str       String str.
+     * @return new modified String.
+     */
+    public String removeCharacter(char character, String str) {
         if (isNullOrEmpty(str)) {
             System.out.println("Passed null value for String-type parameter or passed empty line:");
             return null;
         }
 
-        StringBuilder newStr = new StringBuilder();
-
+        int countNonCharacters = 0;
         char[] chars = str.toCharArray();
         for (int i = 0; i < str.length(); i++) {
-            if (chars[i] >= 97 && chars[i] <= 122) {
-                chars[i] -= 32;
+            if (chars[i] != character) {
+                countNonCharacters++;
             }
         }
-        return newStr.append(String.valueOf(chars));
+
+        char[] newChars = new char[countNonCharacters];
+        for (int i = 0, j = 0; i < chars.length; i++) {
+            if (chars[i] != character) {
+                newChars[j] = chars[i];
+                j++;
+            }
+        }
+        return String.valueOf(newChars);
     }
 
 
+    /**
+     * This method removes specified character from StringBuilder.
+     *
+     * @param character char character.
+     * @param str       String str.
+     * @return modified StringBuilder.
+     */
+    public StringBuilder removeCharacter(char character, StringBuilder str) {
+        if (isNullOrEmpty(String.valueOf(str))) {
+            System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
+            return null;
+        }
 
+        for (int i = 0; i < str.length(); i++) {
+            if (character == str.charAt(i)) {
+                str.deleteCharAt(i);
+            }
+        }
+        return str;
+    }
+
+
+    /**
+     * This method replaces specified characters with specified character in String.
+     *
+     * @param str     String str.
+     * @param oldChar char oldChar.
+     * @param newChar char newChar.
+     * @return new modified String.
+     */
+    public String replace(String str, char oldChar, char newChar) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return null;
+        }
+
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < str.length(); i++) {
+            if (chars[i] == oldChar) {
+                chars[i] = newChar;
+            }
+        }
+        return String.valueOf(chars);
+    }
+
+
+    /**
+     * This method finds the longest word in the String.
+     * In String a word is the set of characters between two spaces.
+     *
+     * @param str String str
+     * @return the longest word in the String.
+     */
+    public String longestWord(String str) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return null;
+        }
+
+        char[] chars = str.toCharArray();
+        int k = 0;
+        int longestK = 0;
+        int startIndex = 0;
+
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] == ' ') {
+                k++;
+            } else if (chars[i + 1] != ' ') {
+                k++;
+            } else {
+                k = 0;
+            }
+            if (k == 1 && longestK <= k) {
+                startIndex = i;
+            }
+            if (k >= longestK) {
+                longestK = k;
+            }
+        }
+
+        char[] newChar = new char[longestK];
+        for (int i = 0; i < newChar.length; i++) {
+            newChar[i] = chars[startIndex];
+            startIndex++;
+        }
+        return String.valueOf(newChar);
+    }
+
+
+    /**
+     * This method finds first index of a character in String.
+     *
+     * @param character char character.
+     * @param str       String str.
+     * @return first index of char.
+     */
+    public int firstIndexOf(char character, String str) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return 0;
+        }
+
+        int index = 0;
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == character) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+
+    /**
+     * This method finds the specified subLine in String.
+     *
+     * @param str String str.
+     * @param end int end. [0; str.length()).
+     * @return the subLine.
+     */
+    public String subLine(String str, int end) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return null;
+        }
+        if (end < 0 || end >= str.length()) {
+            System.out.println("Parameter end must be in range [0; str.length()):");
+            return null;
+        }
+
+        char[] newChars = new char[end + 1];
+        for (int i = 0; i < newChars.length; i++) {
+            newChars[i] = str.charAt(i);
+        }
+        return String.valueOf(newChars);
+    }
+
+
+    public StringBuilder subLine(StringBuilder str, int end) {
+        if (isNullOrEmpty(String.valueOf(str))) {
+            System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
+            return null;
+        }
+        if (end < 0 || end >= str.length()) {
+            System.out.println("Parameter end must be in range [0; str.length()):");
+            return null;
+        }
+
+        return str.delete(end + 1, str.length());
+    }
+
+
+    /**
+     * This method finds the longest sentence in the String.
+     * In String a word is the set of characters between two ','.
+     *
+     * @param str String str
+     * @return the longest word in the String.
+     */
+    public String longestSentence(String str) {
+        if (isNullOrEmpty(str)) {
+            System.out.println("Passed null value for String-type parameter or passed empty line:");
+            return null;
+        }
+
+        char[] chars = str.toCharArray();
+        int k = 0;
+        int longestK = 0;
+        int startIndex = 0;
+
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] == ',') {
+                k++;
+            } else if (chars[i + 1] != ',') {
+                k++;
+            } else {
+                k = 0;
+            }
+            if (k == 1 && longestK <= k) {
+                startIndex = i;
+            }
+            if (k >= longestK) {
+                longestK = k;
+            }
+        }
+
+        char[] newChar = new char[longestK];
+        for (int i = 0; i < newChar.length; i++) {
+            newChar[i] = chars[startIndex];
+            startIndex++;
+        }
+        return String.valueOf(newChar);
+    }
 
 
     /**
