@@ -207,7 +207,7 @@ public class StringUtil_1 {
         }
 
         int count = 0;
-        for (int i = 0; i < line.length() - token.length(); i++) {
+        for (int i = 0; i <= line.length() - token.length(); i++) {
             if (token.equals(line.substring(i, token.length() + i))) {
                 count++;
             }
