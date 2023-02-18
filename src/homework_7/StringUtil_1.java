@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StringUtil {
+public class StringUtil_1 {
 
     /**
      * This method concatenates the arguments in the String.
@@ -361,7 +361,7 @@ public class StringUtil {
      * In String a word is the set of characters between two spaces.
      * If there is two words with equal lengths, then will be returned first word.
      *
-     * @param str String str
+     * @param str String str.
      * @return the longest word in the String.
      */
     public String longestWord(String str) {
@@ -448,7 +448,6 @@ public class StringUtil {
             System.out.println("Parameter end must be in range [0; str.length()):");
             return null;
         }
-
         return str.delete(end + 1, str.length());
     }
 
