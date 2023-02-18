@@ -103,6 +103,7 @@ public class StringUtil_1 {
             System.out.println("Passed null value for StringBuilder-type parameter or passed empty line:");
             return null;
         }
+
         int sum = num1 + num2;
         return str.insert(0, sum);
     }
