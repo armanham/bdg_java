@@ -215,7 +215,7 @@ public class StatementsUtil {
     public int firstDigitOf(int number) {
         if (number <= 0) {
             System.out.println("Parameter number must be positive number:");
-            return 0;
+            return -1;
         }
         if (number < 10) {
             return number;
@@ -238,6 +238,11 @@ public class StatementsUtil {
      * @param side int number, the side of square.
      */
     public void printSquare(int side) {
+        if (side < 1){
+            System.out.println("Parameter must be positive number:");
+            return;
+        }
+
         for (int i = 0; i < side; i++) {
             for (int j = 0; j < side; j++) {
                 System.out.print("* ");
@@ -256,8 +261,9 @@ public class StatementsUtil {
     public int sumOfMultiplesOf5(int end) {
         if (end <= 0) {                //ավելի ճիշտ կլիներ օգտագործել exception
             System.out.println("Parameter end must be positive number:");
-            return 0;
+            return -1;
         }
+
         int sum = 0;
         for (int i = 1; i <= end; i++) {
             if (i % 5 == 0) {
@@ -279,6 +285,7 @@ public class StatementsUtil {
             System.out.println("Parameter end must be >10 number:");
             return BigDecimal.ZERO;
         }
+
         BigDecimal multiple = BigDecimal.ONE;
         if (end > 99) {
             for (int i = 10; i <= 99; i++) {
@@ -288,6 +295,7 @@ public class StatementsUtil {
             }
             return multiple;
         }
+
         for (int i = 10; i <= end; i++) {
             if (i % 2 == 0) {
                 multiple = multiple.multiply(BigDecimal.valueOf(i));
@@ -314,7 +322,7 @@ public class StatementsUtil {
     public double averageSumOfMaxAndMinValuesOf(int end) {
         if (end <= 1) {                //ավելի ճիշտ կլիներ օգտագործել exception
             System.out.println("Parameter end must be > 1:");
-            return 0;
+            return -1;
         }
         return (double) (1 + end) / 2;
     }
@@ -329,8 +337,9 @@ public class StatementsUtil {
     public int sumOfDigitsOfFiveDigitNumber(int number) {
         if (number < 10000 || number > 99999) {
             System.out.println("Parameter end must be five-digit and positive number:");
-            return 0;
+            return -1;
         }
+
         int sumOfDigits = 0;
         for (int i = 0; i < 5; i++) {
             sumOfDigits += number % 10;
