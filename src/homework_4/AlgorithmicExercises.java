@@ -87,8 +87,9 @@ public class AlgorithmicExercises {
     public int largestPrimeFactorOf(int number) {
         if (number <= 1) {
             System.out.println("Only >1 numbers have prime divisors");
-            return 0;
+            return -1;
         }
+
         int largestPrimeFactor = 0;
         for (int i = 2; i <= number; i++) {
             while (isPrime(i) && number % i == 0) {
