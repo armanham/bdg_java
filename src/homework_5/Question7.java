@@ -29,6 +29,6 @@ public class Question7 {
         }
 
         System.out.println();
-        algorithmicExercises.largestAndSmallestValuesOf(array, i);
+        algorithmicExercises.largestAndSmallestValuesOf(array);
     }
 }

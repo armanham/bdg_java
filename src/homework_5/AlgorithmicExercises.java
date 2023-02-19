@@ -54,6 +54,7 @@ public class AlgorithmicExercises {
         if (number > -10 && number < 10) {
             return String.valueOf(number);
         }
+
         String convertedToString = String.valueOf(number);
         String reversedNumber = "";
         for (int i = convertedToString.length() - 1; i >= 0; i--) {
@@ -78,13 +79,17 @@ public class AlgorithmicExercises {
     /**
      * This method finds and prints largest and smallest values of array.
      *
-     * @param array         int[] array.
-     * @param lengthOfArray int number.
+     * @param array int[] array.
      */
-    public void largestAndSmallestValuesOf(int[] array, int lengthOfArray) {
+    public void largestAndSmallestValuesOf(int[] array) {
+        if (array.length == 0) {
+            System.out.println("Passed empty array:");
+            return;
+        }
+
         int min = array[0];
         int max = array[0];
-        for (int i = 1; i < lengthOfArray; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
                 min = array[i];
             }
@@ -143,7 +148,7 @@ public class AlgorithmicExercises {
     public double sumOfOneDivNToOne(int number) {
         if (number <= 0) {
             System.out.println("Parameter number must be positive number");
-            return 0;
+            return -1;
         }
         double sum = 1;
         for (double i = 2; i <= number; i++) {
@@ -163,7 +168,7 @@ public class AlgorithmicExercises {
     public double sumOfOneDivNToOne2(int number) {
         if (number <= 0) {
             System.out.println("Parameter number must be positive number");
-            return 0;
+            return -1;
         }
         double sum = 1;
         for (double i = 2; i <= number; i++) {
