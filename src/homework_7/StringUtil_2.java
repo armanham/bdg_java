@@ -1,5 +1,6 @@
 package homework_7;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StringUtil_2 {
@@ -75,7 +76,7 @@ public class StringUtil_2 {
 //            }
 //        } ՀԱՐՑ____ foreach-ով remove անել չի լինում,,, նու մոդիֆայ անել չի լինում, why?
         for (int i = 0; i < stringList.size(); i++) {
-            if (!stringList.get(i).startsWith("a") || stringList.get(i).length() != 3){
+            if (!stringList.get(i).startsWith("a") || stringList.get(i).length() != 3) {
                 stringList.remove(stringList.get(i));
                 i--;
             }
@@ -83,6 +84,89 @@ public class StringUtil_2 {
         return stringList;
     }
 
+
+    /**
+     * This method presents floating-point number as a String.
+     * 8.98 -> o8,e98.
+     *
+     * @param number double-type.
+     * @return number in String.
+     */
+    public String presentFloatingPointNumber(double number) {
+        String numStr = String.valueOf(number);
+        String[] splitNum = numStr.split("\\.");
+        return "o" + splitNum[0] + ",e" + splitNum[1];
+    }
+
+
+    /**
+     * This method encrypts text with Cesar's algorithm.
+     *
+     * @param text     String-type.
+     * @param shiftKey int-type.
+     * @return new encrypted text.
+     */
+    public String cesarEncrypt(String text, int shiftKey) {
+        if (util_1.isNullOrEmpty(text)) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+        if (shiftKey > 25 || shiftKey < 1) {
+            System.out.println("Key must be in range [1; 25]");
+            return null;
+        }
+
+        String encryptedText = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isUpperCase(text.charAt(i))) {
+                char lettersOfText = (char) ((text.charAt(i) + shiftKey - 65) % 26 + 65);
+                encryptedText += lettersOfText;
+            } else if (Character.isSpaceChar(text.charAt(i))) {
+                encryptedText += " ";
+            } else {
+                char lettersOfText = (char) ((text.charAt(i) + shiftKey - 97) % 26 + 97);
+                encryptedText += lettersOfText;
+            }
+        }
+        return encryptedText;
+    }
+
+
+    /**
+     * This method finds first longest palindrome word in String.
+     * A palindrome is a word which reads the same backward or forward.
+     * a - > palindrome.
+     * ava -> palindrome.
+     * abva-> palindrome.
+     *
+     * @param str String-type.
+     * @return first longest palindrome word.
+     */
+    public String longestPalindrome(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+
+        List<String> palindromes = new ArrayList<>();
+        for (int i = 0; i < str.length() - 1; i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (isPalindrome(str.substring(i, j))) {
+                    palindromes.add(str.substring(i, j));
+                }
+            }
+        }
+
+        int longestLength = palindromes.get(0).length();
+        int index = 0;
+        for (int i = 0; i < palindromes.size(); i++) {
+            if (longestLength < palindromes.get(i).length()) {
+                longestLength = palindromes.get(i).length();
+                index = palindromes.indexOf(palindromes.get(i));
+            }
+        }
+        return palindromes.get(index);
+    }
 
 
 
