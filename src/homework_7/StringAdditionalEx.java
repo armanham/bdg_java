@@ -78,6 +78,29 @@ public class StringAdditionalEx {
 
 
     /**
+     * This method converts odd lowercase letters to uppercase in String.
+     *
+     * @param str String-type..
+     * @return new modified String.
+     */
+    public String toUpperCaseOddLetters(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty values:");
+            return null;
+        }
+
+        char[] chars = str.toCharArray();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isLowerCase(chars[i]) && i % 2 == 0) {
+                chars[i] = Character.toUpperCase(chars[i]);
+            }
+        }
+        return String.valueOf(chars);
+    }
+
+
+    /**
      * This method combines two Strings.
      * mix("aaa", "BBB") → "aBaBaB"
      * mix("good one", "111") → "g1o1o1d one"
