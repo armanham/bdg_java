@@ -1,6 +1,7 @@
 package homework_7;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StringUtil_2 {
@@ -169,5 +170,158 @@ public class StringUtil_2 {
     }
 
 
+    /**
+     * This method finds common longest sequence in two Strings.
+     *
+     * @param str1 String-type.
+     * @param str2 String-type.
+     * @return the longest common sequence in two Strings.
+     */
+    public String longestCommonSubSequence(String str1, String str2) {
+        if (util_1.isNullOrEmpty(str1) || util_1.isNullOrEmpty(str2)) {
+            System.out.println("Passed null or empty value:");
+            return "";
+        }
 
+        List<String> sequencesStr1 = allSequences(str1);
+        List<String> sequencesStr2 = allSequences(str2);
+        List<String> commonSequences = new ArrayList<>();
+
+        for (int i = 0; i < sequencesStr1.size(); i++) {
+            for (String item : sequencesStr2) {
+                if (sequencesStr1.get(i).equals(item)) {
+                    commonSequences.add(item);
+                }
+            }
+        }
+
+        int longestLength = commonSequences.get(0).length();
+        int index = 0;
+        for (int i = 0; i < commonSequences.size(); i++) {
+            if (longestLength <= commonSequences.get(i).length()) {
+                longestLength = commonSequences.get(i).length();
+                index = i;
+            }
+        }
+        return commonSequences.get(index);
+    }
+
+
+    /**
+     * This method finds count of common characters in two Strings.
+     * One character counts once.
+     *
+     * @param str1 String-type.
+     * @param str2 String-type.
+     * @return the longest common sequence in two Strings.
+     */
+    public int countCommonCharacters(String str1, String str2) {
+        if (util_1.isNullOrEmpty(str1) || util_1.isNullOrEmpty(str2)) {
+            System.out.println("Passed null or empty value:");
+            return -1;
+        }
+
+        List<Character> charactersStr1 = allCharacters(str1);
+        List<Character> charactersStr2 = allCharacters(str2);
+        List<Character> commonCharacters = new ArrayList<>();
+
+        for (int i = 0; i < charactersStr1.size(); i++) {
+            for (Character item : charactersStr2) {
+                if (charactersStr1.get(i).equals(item)) {
+                    commonCharacters.add(item);
+                }
+            }
+        }
+        return commonCharacters.size();
+    }
+
+
+    public String parenthesesReverse(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+
+        int countOfOpenParentheses = 0;
+        int countOfCloseParentheses = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '(') {
+                countOfOpenParentheses++;
+            }
+            if (str.charAt(i) == ')') {
+                countOfCloseParentheses++;
+            }
+        }
+        if (countOfOpenParentheses != countOfCloseParentheses) {
+            System.out.println("Counts of open and close parentheses in the String must be equal");
+            return null;
+        }
+
+        //TODO APEEEEE   || str.indexOf('(') == -1
+        if (str.indexOf(')') < str.lastIndexOf('(')) {
+            return str;
+        }
+
+        StringBuilder sb = new StringBuilder(str);
+
+        for (int i = sb.lastIndexOf("("); i >= 0; i--) {
+            for (int j = sb.indexOf(")"); j <= sb.lastIndexOf(")"); j++) {
+                if (sb.charAt(i) == '(' && sb.charAt(j) == ')') {
+                    String reversedSubStr = util_1.reverse(sb.substring(i, j + 1));
+                    sb.replace(i, j + 1, reversedSubStr);
+                    sb.deleteCharAt(j);
+                    sb.deleteCharAt(i);
+                }
+            }
+        }
+        return String.valueOf(sb);
+    }
+
+
+    /**
+     * This method finds and collects all subStrings in String.
+     * Duplicates not allowed.
+     *
+     * @param str String-type.
+     * @return list of subStrings.
+     */
+    public List<String> allSequences(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+
+        List<String> sequences = new ArrayList<>();
+        for (int i = 0; i < str.length() - 1; i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                if (!sequences.contains(str.substring(i, j + 1))) {
+                    sequences.add(str.substring(i, j + 1));
+                }
+            }
+        }
+        return sequences;
+    }
+
+
+    /**
+     * This method finds and collects all characters in String.
+     * Duplicates not allowed.
+     *
+     * @param str String-type.
+     * @return list of characters.
+     */
+    public List<Character> allCharacters(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+
+        List<Character> characters = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (!characters.contains(str.charAt(i))) {
+                characters.add(str.charAt(i));
+            }
+        }
+        return characters;
+    }
 }
