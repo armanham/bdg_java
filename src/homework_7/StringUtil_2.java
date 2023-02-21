@@ -1,7 +1,6 @@
 package homework_7;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StringUtil_2 {
@@ -88,7 +87,7 @@ public class StringUtil_2 {
 
     /**
      * This method presents floating-point number as a String.
-     * 8.98 -> o8,e98.
+     * 8.98 -> i8e98.
      *
      * @param number double-type.
      * @return number in String.
@@ -96,7 +95,32 @@ public class StringUtil_2 {
     public String presentFloatingPointNumber(double number) {
         String numStr = String.valueOf(number);
         String[] splitNum = numStr.split("\\.");
-        return "o" + splitNum[0] + ",e" + splitNum[1];
+        return "i" + splitNum[0] + "e" + splitNum[1];
+    }
+
+
+    /**
+     * This method determines is numbers in list of integers odd or even.
+     * [5,2,31,0] -> [o5, e2, o31, e0].
+     *
+     * @param integers List<Integer>-type
+     * @return String of numbers specified any number with 'e' or 'o'.
+     */
+    public String oddEvenNumbers(List<Integer> integers) {
+        if (integers == null || integers.isEmpty()) {
+            System.out.println("Passed null or empty value:");
+            return null;
+        }
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < integers.size(); i++) {
+            if (integers.get(i) % 2 == 0) {
+                list.add("e" + integers.get(i));
+            } else {
+                list.add("o" + integers.get(i));
+            }
+        }
+        return String.valueOf(list);
     }
 
 
