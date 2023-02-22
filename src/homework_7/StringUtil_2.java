@@ -70,11 +70,6 @@ public class StringUtil_2 {
             return null;
         }
 
-//        for (String item : stringList) {
-//            if (!item.startsWith("a") || item.length() != 3) {
-//                stringList.remove(item);
-//            }
-//        } ՀԱՐՑ____ foreach-ով remove անել չի լինում,,, նու մոդիֆայ անել չի լինում, why?
         for (int i = 0; i < stringList.size(); i++) {
             if (!stringList.get(i).startsWith("a") || stringList.get(i).length() != 3) {
                 stringList.remove(stringList.get(i));
