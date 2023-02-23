@@ -1,4 +1,4 @@
-package homework_8.exercise_1;
+package homework_8.inheritance.exercise_1;
 
 public class Child extends Parent {
 

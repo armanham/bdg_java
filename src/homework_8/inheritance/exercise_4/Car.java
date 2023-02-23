@@ -1,4 +1,4 @@
-package homework_8.exercise_4;
+package homework_8.inheritance.exercise_4;
 
 public class Car {
 
