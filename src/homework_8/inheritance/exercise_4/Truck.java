@@ -9,6 +9,10 @@ public class Truck extends Car {
         setCapacity(capacity);
     }
 
+    public Truck(int passengerCount, Character engineType) {
+        super(passengerCount, engineType);
+    }
+
     public int getCapacity() {
         return capacity;
     }
