@@ -6,7 +6,7 @@ public class Test {
         Car truck = new Truck(2,'A', 6);
         truck.setEngineType('B');
         System.out.println(truck.toString());
-        Car truck2 = new Truck(2,'A');
+        Truck truck2 = new Truck(2,'A');
         System.out.println(truck2.toString());
     }
 }

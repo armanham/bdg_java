@@ -5,8 +5,8 @@ public class Truck extends Car {
     private int capacity;
 
     public Truck(int passengerCount, Character engineType, int capacity) {
-        super(passengerCount, engineType);
-        setCapacity(capacity);
+        super(passengerCount, engineType);  //TODO mi hat laaaav usumnasirel
+        setCapacity(capacity);              // hishoxutyan mej ka info ayn masin vor childy extend a anum parentic
     }
 
     public Truck(int passengerCount, Character engineType) {
@@ -20,8 +20,7 @@ public class Truck extends Car {
     public void setCapacity(int capacity) {
         if (capacity >= 0) {
             this.capacity = capacity;
-        }
-        else {
+        } else {
             System.out.println("Wrong capacity:");
         }
     }

@@ -23,7 +23,7 @@ public class Car {
         if (passengerCount > 1) {
             this.passengerCount = passengerCount;
         } else {
-            System.out.println("Wrong passengerCount:");
+            this.passengerCount = 2;  //
         }
     }
 
