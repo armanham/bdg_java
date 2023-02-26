@@ -389,7 +389,7 @@ public class StringUtil_1 {
      *
      * @param character char character.
      * @param str       String str.
-     * @return first index of char.
+     * @return first index of char, if str contains char, otherwise -1 .
      */
     public int firstIndexOf(char character, String str) {
         if (isNullOrEmpty(str)) {
@@ -398,14 +398,16 @@ public class StringUtil_1 {
         }
 
         int index = 0;
+        boolean contains = false;
         char[] chars = str.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == character) {
                 index = i;
+                contains = true;
                 break;
             }
         }
-        return index;
+        return contains ? index : -1;
     }
 
 
