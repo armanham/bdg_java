@@ -68,7 +68,7 @@ public class StringUtil_2 {
      * @param str String-type.
      * @return true if passed string possible to make palindrome, false otherwise.
      */
-    public boolean isPossibleToBePalindrome(String str) {
+    public boolean isPossibleToMakePalindrome(String str) {
         if (util_1.isNullOrEmpty(str)) {
             System.out.println("Passed null or empty value:");
             return false;
@@ -84,77 +84,6 @@ public class StringUtil_2 {
             listOfCountsDiffCharsInString.add(countCharacterInString(characters.get(i), str));
         }
         return oddNumbersCount(listOfCountsDiffCharsInString) == 0 || oddNumbersCount(listOfCountsDiffCharsInString) == 1;
-    }
-
-
-    /**
-     * This method counts how many times the given char occurs in the given string.
-     *
-     * @param character char-type.
-     * @param str       String-type.
-     * @return the number how many times the char occurs in the string.
-     */
-    public int countCharacterInString(char character, String str) {
-        if (util_1.isNullOrEmpty(str)) {
-            System.out.println("Passed null or empty value:");
-            return -1;
-        }
-
-        if (!str.contains(String.valueOf(character))) {
-            return -1;
-        }
-
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (character == str.charAt(i)) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    /**
-     * This method finds count of even numbers in any integerList.
-     *
-     * @param integers List<Integer>-type.
-     * @return count of even numbers in list.
-     */
-    public int evenNumbersCount(List<Integer> integers) {
-        if (integers == null || integers.isEmpty()) {
-            System.out.println("Passed null or empty value");
-            return -1;
-        }
-
-        int count = 0;
-        for (int item : integers) {
-            if (item % 2 == 0) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    /**
-     * This method finds count of odd numbers in any integerList.
-     *
-     * @param integers List<Integer>-type.
-     * @return count of odd numbers in list.
-     */
-    public int oddNumbersCount(List<Integer> integers) {
-        if (integers == null || integers.isEmpty()) {
-            System.out.println("Passed null or empty value");
-            return -1;
-        }
-
-        int count = 0;
-        for (int item : integers) {
-            if (item % 2 != 0) {
-                count++;
-            }
-        }
-        return count;
     }
 
 
@@ -439,5 +368,76 @@ public class StringUtil_2 {
             }
         }
         return characters;
+    }
+
+
+    /**
+     * This method counts how many times the given char occurs in the given string.
+     *
+     * @param character char-type.
+     * @param str       String-type.
+     * @return the number how many times the char occurs in the string.
+     */
+    public int countCharacterInString(char character, String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return -1;
+        }
+
+        if (!str.contains(String.valueOf(character))) {
+            return -1;
+        }
+
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (character == str.charAt(i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * This method finds count of odd numbers in any integerList.
+     *
+     * @param integers List<Integer>-type.
+     * @return count of odd numbers in list.
+     */
+    public int oddNumbersCount(List<Integer> integers) {
+        if (integers == null || integers.isEmpty()) {
+            System.out.println("Passed null or empty value");
+            return -1;
+        }
+
+        int count = 0;
+        for (int item : integers) {
+            if (item % 2 != 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * This method finds count of even numbers in any integerList.
+     *
+     * @param integers List<Integer>-type.
+     * @return count of even numbers in list.
+     */
+    public int evenNumbersCount(List<Integer> integers) {
+        if (integers == null || integers.isEmpty()) {
+            System.out.println("Passed null or empty value");
+            return -1;
+        }
+
+        int count = 0;
+        for (int item : integers) {
+            if (item % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
     }
 }
