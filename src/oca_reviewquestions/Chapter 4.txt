@@ -1,6 +1,6 @@
 1 - c        - b, c    +
 2 - a, b, d  - a, d    +
-3 - a, c, d  + 
+3 - a, c, d  +
 4 - a, b, g  +
 5 - d, f, g  - d, g    +
 6 - b        - c       - english problem   -
