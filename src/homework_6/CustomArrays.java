@@ -144,7 +144,7 @@ public class CustomArrays {
     public int countOfNumberInArray(int number, int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
-            return 0;
+            return -1;
         }
 
         int count = 0;
@@ -165,6 +165,7 @@ public class CustomArrays {
     public int[][] nonRepeatingTriplets(int[] array) {
         if (array.length < 3) {
             System.out.println("Passed array must have three and more elements:");
+            return new int[0][0];
         }
 
         int countOfZeros = countOfNumberInArray(0, array);
@@ -341,13 +342,15 @@ public class CustomArrays {
      * This method finds the longest sequence in non-decreasing order of array.
      *
      * @param array int[] array.
-     * @return new array the of the longest sequence in non-decreasing order of array.
+     * @return new array of the longest sequence in non-decreasing order of array.
      */
     public int[] longestNonDecreasingSequence(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return array;
         }
+
+        //TODO longestNonDecreasingSequence()
 
         int k = 0;
         int longestK = 0;
@@ -384,7 +387,7 @@ public class CustomArrays {
     public int binaryToDecimal(int[] zerosAndOnes) {
         if (zerosAndOnes.length == 0) {
             System.out.println("Passed array has no elements:");
-            return 0;
+            return -1;
         }
 
         int sum = 0;
@@ -392,7 +395,7 @@ public class CustomArrays {
         for (int i = zerosAndOnes.length - 1; i >= 0; i--) {
             if (zerosAndOnes[i] != 0 && zerosAndOnes[i] != 1) {
                 System.out.print("Elements of passed array must be zero or one:");
-                return 0;
+                return -1;
             }
             sum += zerosAndOnes[i] * Math.pow(2, k);
             k++;
@@ -410,7 +413,7 @@ public class CustomArrays {
     public int minElementOf(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
-            return 0;
+            return -1;
         }
 
         int min = array[0];
@@ -432,7 +435,7 @@ public class CustomArrays {
     public int maxElementOf(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
-            return 0;
+            return -1;
         }
 
         int max = array[0];
@@ -533,7 +536,7 @@ public class CustomArrays {
     public int sumOfPrincipalDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return 0;
+            return -1;
         }
 
         int sum = 0;
@@ -557,7 +560,7 @@ public class CustomArrays {
     public int sumOfSecondaryDiagonal(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return 0;
+            return -1;
         }
 
         int sum = 0;
