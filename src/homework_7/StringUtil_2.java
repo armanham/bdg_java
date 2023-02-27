@@ -62,6 +62,102 @@ public class StringUtil_2 {
     }
 
 
+    /**
+     * This method determines is possible to make passed string to palindrome.
+     *
+     * @param str String-type.
+     * @return true if passed string possible to make palindrome, false otherwise.
+     */
+    public boolean isPossibleToBePalindrome(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return false;
+        }
+        if (isPalindrome(str)) {
+            return true;
+        }
+
+        List<Character> characters = allCharacters(str);
+        List<Integer> listOfCountsDiffCharsInString = new ArrayList<>();
+
+        for (int i = 0; i < characters.size(); i++) {
+            listOfCountsDiffCharsInString.add(countCharacterInString(characters.get(i), str));
+        }
+        return oddNumbersCount(listOfCountsDiffCharsInString) == 0 || oddNumbersCount(listOfCountsDiffCharsInString) == 1;
+    }
+
+
+    /**
+     * This method counts how many times the given char occurs in the given string.
+     *
+     * @param character char-type.
+     * @param str       String-type.
+     * @return the number how many times the char occurs in the string.
+     */
+    public int countCharacterInString(char character, String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty value:");
+            return -1;
+        }
+
+        if (!str.contains(String.valueOf(character))) {
+            return -1;
+        }
+
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (character == str.charAt(i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * This method finds count of even numbers in any integerList.
+     *
+     * @param integers List<Integer>-type.
+     * @return count of even numbers in list.
+     */
+    public int evenNumbersCount(List<Integer> integers) {
+        if (integers == null || integers.isEmpty()) {
+            System.out.println("Passed null or empty value");
+            return -1;
+        }
+
+        int count = 0;
+        for (int item : integers) {
+            if (item % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    /**
+     * This method finds count of odd numbers in any integerList.
+     *
+     * @param integers List<Integer>-type.
+     * @return count of odd numbers in list.
+     */
+    public int oddNumbersCount(List<Integer> integers) {
+        if (integers == null || integers.isEmpty()) {
+            System.out.println("Passed null or empty value");
+            return -1;
+        }
+
+        int count = 0;
+        for (int item : integers) {
+            if (item % 2 != 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
     //Given a list of strings, write a method that returns a list of all strings that
     //start with the letter 'a' (lower case) and have exactly 3 letters.
     public List<String> method4(List<String> stringList) {
@@ -277,6 +373,7 @@ public class StringUtil_2 {
         }
 
         //TODO APEEEEE   || str.indexOf('(') == -1
+        //TODO EGHO PAKAGIC
         if (str.indexOf(')') < str.lastIndexOf('(')) {
             return str;
         }
