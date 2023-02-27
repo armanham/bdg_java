@@ -57,7 +57,7 @@ public class StringAdditionalEx {
     /**
      * This method converts lowercase letters to uppercase in String.
      *
-     * @param str String-type..
+     * @param str String-type.
      * @return new modified String.
      */
     public String toUpperCase(String str) {
@@ -80,7 +80,7 @@ public class StringAdditionalEx {
     /**
      * This method converts odd lowercase letters to uppercase in String.
      *
-     * @param str String-type..
+     * @param str String-type.
      * @return new modified String.
      */
     public String toUpperCaseOddLetters(String str) {
@@ -105,9 +105,9 @@ public class StringAdditionalEx {
      * mix("aaa", "BBB") → "aBaBaB"
      * mix("good one", "111") → "g1o1o1d one"
      *
-     * @param str1
-     * @param str2
-     * @return
+     * @param str1 String-type.
+     * @param str2 String-type.
+     * @return new mixed String.
      */
     public String mix(String str1, String str2) {
         if (util_1.isNullOrEmpty(str1) || util_1.isNullOrEmpty(str2)) {
@@ -146,11 +146,42 @@ public class StringAdditionalEx {
     public int numberOfWords(String str) {
         if (util_1.isNullOrEmpty(str)) {
             System.out.println("Passed null or empty values:");
-            return 0;
+            return -1;
         }
 
         List<String> stringList = new ArrayList<>(Arrays.asList(str.split(" ")));
         return stringList.size();
+    }
+
+
+    public String[] revertWords(String str) {
+        if (util_1.isNullOrEmpty(str)) {
+            System.out.println("Passed null or empty values:");
+            return null;
+        }
+        //TODO revertWords Brat jan
+
+        StringBuilder sb = new StringBuilder();
+        String[] words = str.split(" ");
+        for (int i = 0; i < words.length / 2; i++) {
+            if (words[i].endsWith(".")) {
+                words[i] = words[i].substring(words[i].charAt(0), words[i].length() - 1);
+                String temp = words[i];
+                words[i] = words[words.length - i - 1] + ".";
+                words[words.length - i - 1] = temp;
+            } else if (words[words.length - i - 1].endsWith(".")) {
+                words[words.length - i - 1] = words[words.length - i - 1].substring(words[i].charAt(0), words[words.length - i - 1].length() - 1);
+                String temp = words[i];
+                words[i] = words[words.length - i - 1];
+                words[words.length - i - 1] = temp + ".";
+            } else {
+                String temp = words[i];
+                words[i] = words[words.length - i - 1];
+                words[words.length - i - 1] = temp;
+            }
+        }
+
+        return words;
     }
 
 
@@ -164,11 +195,11 @@ public class StringAdditionalEx {
     public int howManyOccurrences(String str, String subStr) {
         if (util_1.isNullOrEmpty(str) || util_1.isNullOrEmpty(subStr)) {
             System.out.println("Passed null or empty values:");
-            return 0;
+            return -1;
         }
         if (subStr.length() > str.length()) {
             System.out.println("Length of sunStr must be less or equal to length of str");
-            return 0;
+            return -1;
         }
 
         List<String> subStringsList = new ArrayList<>();
