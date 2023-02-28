@@ -5,8 +5,8 @@ public class Truck extends Car {
     private int capacity;
 
     public Truck(int passengerCount, Character engineType, int capacity) {
-        super(passengerCount, engineType);  //TODO mi hat laaaav usumnasirel
-        setCapacity(capacity);              // hishoxutyan mej ka info ayn masin vor childy extend a anum parentic
+        super(passengerCount, engineType);
+        setCapacity(capacity);
     }
 
     public Truck(int passengerCount, Character engineType) {
