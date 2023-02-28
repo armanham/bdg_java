@@ -339,37 +339,36 @@ public class CustomArrays {
 
 
     /**
-     * This method finds the longest sequence in non-decreasing order of array.
+     * This method finds the first longest sequence in non-decreasing order of array.
      *
      * @param array int[] array.
      * @return new array of the longest sequence in non-decreasing order of array.
      */
-    public int[] longestNonDecreasingSequence(int[] array) {
+    public static int[] longestNonDecreasingSequence(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
+            return new int[0];
+        }
+        if (array.length == 1) {
             return array;
         }
 
-        //TODO longestNonDecreasingSequence()
-
-        int k = 0;
-        int longestK = 0;
+        int countOfNonDesc = 0;
+        int longestCountNonDesc = 1;
         int startIndex = 0;
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] <= array[i + 1]) {
-                k++;
+                countOfNonDesc++;
+                if (longestCountNonDesc < countOfNonDesc) {
+                    longestCountNonDesc = countOfNonDesc;
+                    startIndex = i - countOfNonDesc + 1;
+                }
             } else {
-                k = 0;
-            }
-            if (k == 1 && longestK <= k) {
-                startIndex = i;
-            }
-            if (longestK <= k) {
-                longestK = k;
+                countOfNonDesc = 0;
             }
         }
 
-        int[] newArray = new int[longestK + 1];
+        int[] newArray = new int[longestCountNonDesc + 1];
         for (int i = 0; i < newArray.length; i++) {
             newArray[i] = array[startIndex];
             startIndex++;
