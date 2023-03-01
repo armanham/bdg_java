@@ -1,4 +1,4 @@
-package homework_4;
+package algorithmic_ex1;
 
 import homework_3.StatementsUtil;
 
