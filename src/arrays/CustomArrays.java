@@ -1,4 +1,4 @@
-package homework_6;
+package arrays;
 
 import homework_5.AlgorithmicExercises;
 
