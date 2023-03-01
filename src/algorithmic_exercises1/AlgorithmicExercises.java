@@ -1,6 +1,6 @@
 package algorithmic_exercises1;
 
-import homework_3.StatementsUtil;
+import operators_statements.StatementsUtil;
 
 import java.util.Random;
 
