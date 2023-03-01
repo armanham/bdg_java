@@ -1,4 +1,4 @@
-package homework_5;
+package algorithmic_exercises2;
 
 public class AlgorithmicExercises {
 
@@ -71,7 +71,7 @@ public class AlgorithmicExercises {
     //Access-modifier-ը private եմ դրել քանի որ որովհետև մտածում եմ իմաստ չկա էս
     //մեթոդին այլ տեղերից հասանելիություն ունենալ,որովհետև արդեն կա գրված տվյալ մեթոդից:
     private void isPrime(int number) {
-        algorithmic_ex1.AlgorithmicExercises ae = new algorithmic_ex1.AlgorithmicExercises();
+        algorithmic_exercises1.AlgorithmicExercises ae = new algorithmic_exercises1.AlgorithmicExercises();
         System.out.println(ae.isPrime(number));
     }
 

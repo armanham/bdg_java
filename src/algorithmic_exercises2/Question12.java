@@ -1,4 +1,4 @@
-package homework_5;
+package algorithmic_exercises2;
 
 public class Question12 {
 
@@ -65,6 +65,8 @@ public class Question12 {
 
         System.out.println("________________");
 
+        //TODO APEEEEE
+
         for (int i = 1; i <= rows; ++i, k = 0) {
             for (int space = 1; space <= rows - i; ++space) {
                 System.out.print("  ");
@@ -75,8 +77,5 @@ public class Question12 {
             }
             System.out.println();
         }
-
-
-
     }
 }

@@ -1,4 +1,4 @@
-package homework_5;
+package algorithmic_exercises2;
 
 import java.util.Scanner;
 
