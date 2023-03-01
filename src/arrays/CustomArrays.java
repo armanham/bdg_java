@@ -1,6 +1,6 @@
 package arrays;
 
-import homework_5.AlgorithmicExercises;
+import algorithmic_exercises2.AlgorithmicExercises;
 
 import java.util.Arrays;
 
