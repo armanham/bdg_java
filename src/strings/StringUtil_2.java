@@ -1,4 +1,4 @@
-package homework_7;
+package strings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -286,39 +286,46 @@ public class StringUtil_2 {
             return null;
         }
 
-        int countOfOpenParentheses = 0;
-        int countOfCloseParentheses = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                countOfOpenParentheses++;
-            }
-            if (str.charAt(i) == ')') {
-                countOfCloseParentheses++;
-            }
-        }
-        if (countOfOpenParentheses != countOfCloseParentheses) {
-            System.out.println("Counts of open and close parentheses in the String must be equal");
-            return null;
-        }
+//        int countOfOpenParentheses = 0;
+//        int countOfCloseParentheses = 0;
+//        for (int i = 0; i < str.length(); i++) {
+//            if (str.charAt(i) == '(') {
+//                countOfOpenParentheses++;
+//            }
+//            if (str.charAt(i) == ')') {
+//                countOfCloseParentheses++;
+//            }
+//        }
+//        if (countOfOpenParentheses != countOfCloseParentheses) {
+//            System.out.println("Counts of open and close parentheses in the String must be equal");
+//            return null;
+//        }
 
         //TODO APEEEEE   || str.indexOf('(') == -1
         //TODO EGHO PAKAGIC
-        if (str.indexOf(')') < str.lastIndexOf('(')) {
-            return str;
+        if (str.indexOf(')') < str.indexOf('(') ) {
+            return null;
         }
 
         StringBuilder sb = new StringBuilder(str);
 
-        for (int i = sb.lastIndexOf("("); i >= 0; i--) {
-            for (int j = sb.indexOf(")"); j <= sb.lastIndexOf(")"); j++) {
-                if (sb.charAt(i) == '(' && sb.charAt(j) == ')') {
-                    String reversedSubStr = util_1.reverse(sb.substring(i, j + 1));
-                    sb.replace(i, j + 1, reversedSubStr);
-                    sb.deleteCharAt(j);
-                    sb.deleteCharAt(i);
-                }
+        for (int i = sb.indexOf("("); i < sb.lastIndexOf(")"); i++) {
+            if (sb.charAt(i) == '(' && i < sb.indexOf(")")){
+                sb.deleteCharAt(i);
             }
+
         }
+
+//        for (int i = sb.lastIndexOf("("); i >= 0; i--) {
+//            for (int j = sb.indexOf(")"); j <= sb.lastIndexOf(")"); j++) {
+//                if (sb.charAt(i) == '(' && sb.charAt(j) == ')') {
+//                    String reversedSubStr = util_1.reverse(sb.substring(i, j + 1));
+//                    sb.replace(i, j + 1, reversedSubStr);
+//                    sb.deleteCharAt(j);
+//                    sb.deleteCharAt(i);
+//                }
+//            }
+//        }
         return String.valueOf(sb);
     }
 
