@@ -1,4 +1,4 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել Car class-ը, որը ունի
 //●  fields (model, color, currentSpeed (default արժեքը 0), isEngineStart

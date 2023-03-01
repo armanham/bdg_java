@@ -1,4 +1,4 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել երեք class(Dog, Cat , Horse), որոնք գտնվում
 //են նույն .java ֆայլում:

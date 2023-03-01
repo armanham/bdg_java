@@ -1,4 +1,4 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել Employee class-ը, որը ունի
 //● fields (id, name, department, age, gender)

@@ -1,4 +1,4 @@
-package homework_3;
+package operators_statements;
 
 import homework_2.Application;
 

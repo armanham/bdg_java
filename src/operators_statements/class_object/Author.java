@@ -1,7 +1,7 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել երկու class(Book, Author), որոնք գտնվում են տարբեր
 //.java ֆայլերում եւ նույն package ում:
-//class Book is in the same package with class Author
-public class Book {
+//class Author is in the same package with class Book
+public class Author {
 }

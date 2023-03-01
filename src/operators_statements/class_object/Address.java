@@ -1,4 +1,4 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել Address class :
 //fields (country , region, city , street, house )

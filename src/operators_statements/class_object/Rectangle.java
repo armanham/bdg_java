@@ -1,4 +1,4 @@
-package homework_3.class_object;
+package operators_statements.class_object;
 
 //Սահմանել Rectangle class :  fields (length, width ),
 //methods ( calculateArea())
