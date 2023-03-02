@@ -153,9 +153,6 @@ public enum Shapes {
         }
     };
 
-    Shapes() {
-    }
-
 
     /**
      * This abstract method used for to calculate area of specified shape.
