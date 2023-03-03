@@ -394,7 +394,7 @@ public class StringUtil_1 {
     public int firstIndexOf(char character, String str) {
         if (isNullOrEmpty(str)) {
             System.out.println("Passed null value for String-type parameter or passed empty line:");
-            return 0;
+            return -1;
         }
 
         int index = 0;
