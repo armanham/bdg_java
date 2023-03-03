@@ -1,4 +1,4 @@
-package enumeration.shapes;
+package h9_enum.shapes;
 
 public enum Shapes {
     SQUARE {

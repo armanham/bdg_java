@@ -1,4 +1,4 @@
-package enumeration.data;
+package h9_enum.data;
 
 //exercise 1 and 4
 public enum Planets {

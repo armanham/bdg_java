@@ -1,4 +1,4 @@
-package enumeration.measures;
+package h9_enum.measures;
 
 public enum Units {
     METER {
@@ -36,7 +36,7 @@ public enum Units {
         public String getBaseUnit() {
             return String.valueOf(CANDELA);
         }
-    }, NEWTON {
+    }, NEWTON{
         @Override
         public String getBaseUnit() {
             return KILOGRAM + " * " + METER + " / " + SECOND + "^2";
@@ -57,7 +57,6 @@ public enum Units {
             return METER + " * 1000";
         }
     };
-
 
     /**
      * This abstract method returns the base unit for specified measure.
