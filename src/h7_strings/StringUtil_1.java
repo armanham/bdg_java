@@ -199,11 +199,11 @@ public class StringUtil_1 {
         if (isNullOrEmpty(line) || isNullOrEmpty(token)) {
             System.out.println("Passed null value for one or both of String-type parameters\n " +
                     "or passed empty lines for one or both of String-type parameters:");
-            return 0;
+            return -1;
         }
         if (token.length() > line.length()) {
             System.out.println("Length of parameter 'token' must be less or equal to length of parameter 'line':");
-            return 0;
+            return -1;
         }
 
         int count = 0;
