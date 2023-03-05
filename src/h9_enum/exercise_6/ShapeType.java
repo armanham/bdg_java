@@ -1,51 +1,70 @@
 package h9_enum.exercise_6;
 
-public enum ShapeType {
-    SQUARE {
-        private Shape square;
+//public enum ShapeType {
+//    SQUARE {
+//        private Shape square;
+//
+//        @Override
+//        public void setShape(Shape shape) {
+//            if (shape instanceof Square) {
+//                square = shape;
+//            }
+//        }
+//
+//        @Override
+//        public Shape getShape() {
+//            return square;
+//        }
+//    }, CIRCLE {
+//        private Shape circle;
+//
+//        @Override
+//        public void setShape(Shape shape) {
+//            if (shape instanceof Circle) {
+//                circle = shape;
+//            }
+//        }
+//
+//        @Override
+//        public Shape getShape() {
+//            return circle;
+//        }
+//    }, RECTANGLE {
+//        private Shape rectangle;
+//
+//        @Override
+//        public void setShape(Shape shape) {
+//            if (shape instanceof Rectangle) {
+//                rectangle = shape;
+//            }
+//        }
+//
+//        @Override
+//        public Shape getShape() {
+//            return rectangle;
+//        }
+//    };
+//
+//    public abstract void setShape(Shape shape);
+//
+//    public abstract Shape getShape();
+//}
 
-        @Override
-        public void setShape(Shape shape) {
-            if (shape instanceof Square) {
-                square = shape;
-            }
-        }
 
-        @Override
-        public Shape getShape() {
-            return square;
-        }
-    }, CIRCLE {
-        private Shape circle;
+enum ShapeType {
 
-        @Override
-        public void setShape(Shape shape) {
-            if (shape instanceof Circle) {
-                circle = shape;
-            }
-        }
+    CIRCLE(new Circle()),
+    SQUARE(new Square()),
+    RECTANGLE(new Rectangle());
 
-        @Override
-        public Shape getShape() {
-            return circle;
-        }
-    }, RECTANGLE {
-        private Shape rectangle;
 
-        @Override
-        public void setShape(Shape shape) {
-            if (shape instanceof Rectangle) {
-                rectangle = shape;
-            }
-        }
+    private Shape shape;
 
-        @Override
-        public Shape getShape() {
-            return rectangle;
-        }
-    };
+    ShapeType(Shape shape) {
+        this.shape = shape;
+    }
 
-    public abstract void setShape(Shape shape);
-
-    public abstract Shape getShape();
+    public Shape getShape() {
+        return shape;
+    }
 }
