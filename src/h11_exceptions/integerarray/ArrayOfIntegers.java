@@ -8,28 +8,6 @@ public class ArrayOfIntegers {
     //heto sax poxanceluc heto nor validationners u exceptionners ashxaten
     private List<String> integers;
 
-    /**
-     * This method determines is the passed String an integer number or not.
-     *
-     * @param number String - type.
-     * @return true if passed String is an integer number, false otherwise.
-     * @throws IllegalArgumentException if as an argument passed non-integer value.
-     */
-    private boolean isInteger(String number) throws IllegalArgumentException {
-        if (number == null || number.isEmpty()) {
-            System.out.println("Passed null or empty value: ");
-            return false;
-        }
-
-        char[] chars = number.toCharArray();
-        for (char item : chars) {
-            if (!Character.isDigit(item)) {
-                throw new IllegalArgumentException("Passed non integer value: ");
-            }
-        }
-        return true;
-    }
-
 
     /**
      * This method calculates sum of elements of array.
@@ -56,11 +34,36 @@ public class ArrayOfIntegers {
         return sum;
     }
 
+
     public List<String> getIntegers() {
         return integers;
     }
 
+
     public void setIntegers(List<String> integers) {
         this.integers = integers;
+    }
+
+
+    /**
+     * This method determines is the passed String an integer number or not.
+     *
+     * @param number String - type.
+     * @return true if passed String is an integer number, false otherwise.
+     * @throws IllegalArgumentException if as an argument passed non-integer value.
+     */
+    private boolean isInteger(String number) throws IllegalArgumentException {
+        if (number == null || number.isEmpty()) {
+            System.out.println("Passed null or empty value: ");
+            return false;
+        }
+
+        char[] chars = number.toCharArray();
+        for (char item : chars) {
+            if (!Character.isDigit(item)) {
+                throw new IllegalArgumentException("Passed non integer value: ");
+            }
+        }
+        return true;
     }
 }
