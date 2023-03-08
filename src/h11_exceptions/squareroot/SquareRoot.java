@@ -19,8 +19,6 @@ public class SquareRoot {
                 throw new IllegalArgumentException("Passed zero or negative number: ");
             }
             sqrt = Math.sqrt(num);
-        } catch (NumberFormatException ex) {
-            System.out.println(ex.getMessage());
         } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
         } finally {
