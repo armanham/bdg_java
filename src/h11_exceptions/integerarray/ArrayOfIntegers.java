@@ -14,7 +14,7 @@ public class ArrayOfIntegers {
      *
      * @return the sum of elements of array.
      */
-    public int sumElementsOf() {
+    public int sumElements() {
         if (integers.size() == 0) {
             System.out.println("Passed an empty array");
             return -1;

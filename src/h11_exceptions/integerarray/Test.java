@@ -24,6 +24,6 @@ public class Test {
             k++;
         }
         integers.setIntegers(numbers);
-        System.out.println("Sum of entered elements: " + integers.sumElementsOf());
+        System.out.println("Sum of entered elements: " + integers.sumElements());
     }
 }
