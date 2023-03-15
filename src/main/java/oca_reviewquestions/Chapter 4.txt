@@ -1,0 +1,29 @@
+1 - c        - b, c    +
+2 - a, b, d  - a, d    +
+3 - a, c, d  +
+4 - a, b, g  +
+5 - d, f, g  - d, g    +
+6 - b        - c       - english problem   -
+7 - c        - c, d, f - b, c, d, f        + kampilacya kancni 8rd toxi vra qani vor kody gtnvum a copmile-timum isk Runtime kunenanq error
+8 - b, c, e  +
+9 - c, e     +
+10- d, e     - b       +
+11- b        - b, f    -                   -
+12- d        +
+13- c        - d       - e                 +
+14- b        +
+15-          - f       -                   - e
+16- c        - b       +
+17- a, d, e  -    nayel noric USHADIR pass by value
+18-          - b, c, f -                   - 
+19- a        - a, d    - a, g              +
+20- e        +    nayel shaaaat ushadir
+21- c        +
+22- g        - e       +
+23- a        +
+24- c, e     - b, c, e +
+25- a, e     +
+26-          -
+27-          -
+28-          -
+29-          -

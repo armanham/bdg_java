@@ -1,0 +1,20 @@
+1 - B    + default-y henc nra hamar a, vor abstract chlini.
+2 - E    + default const chka,,, kpahanji exac const-i kanch
+3 - ABDE +
+4 - BCE  - covariant retTypes---allows to a narrow down retType
+5 - ADEF + variables cannot be overriden, Arman jan!
+6 - B - D+ (error klini voch te interface-um, ayl concrete classi definitionum)the first concreteClass must be implemets abstract methods of all parent interfaces and absClasses.
+7 - C    - ???
+8 - F    +
+9 - F - A+ abstractClassy partavor chi implementi ir parent interfaceneri kam absClassneri absMethodnery,,, ayn dranq uni.
+10- BEFG - BCEFG  - interface-y interface-ic extends a anum .... էստեղ ասում ա Object-ից չեն ժառանգվում ու G option-ը չկա պատասխաններում ???
+11- ADE  +
+12- A    -
+13- E    - A + stex overloading a,,,
+14- BC   - C +
+15- B    +
+16- E    +
+17- B    +
+18- E    +
+19- ACD  - ???
+20- D    -  B +
