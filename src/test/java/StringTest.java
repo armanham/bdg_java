@@ -170,8 +170,31 @@ public class StringTest {
     void indexOfTest() {
         string = "good morning";
         assertNotNull(string);
+        assertEquals(1, string.indexOf('o'));
+        assertEquals(-1, string.indexOf('k'));
+    }
 
-        //TODO
+    @Test
+    void lastIndexOfTest() {
+        string = "good morning";
+        assertNotNull(string);
+        assertEquals(6, string.lastIndexOf('o'));
+        assertEquals(-1, string.lastIndexOf('k'));
+    }
+
+    @Test
+    void substringTest() {
+        string = "good morning";
+        assertNotNull(string);
+        assertEquals("good", string.substring(0, 4));
+
+        boolean thrown = false;
+        try {
+            string.codePointCount(3, 16);
+        } catch (IndexOutOfBoundsException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
