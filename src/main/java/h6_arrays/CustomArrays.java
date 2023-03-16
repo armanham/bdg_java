@@ -327,6 +327,10 @@ public class CustomArrays {
             }
         }
 
+        if (countOfNoZeros == array.length) {
+            return array;
+        }
+
         int[] newArray = new int[countOfNoZeros];
         for (int i = 0, j = 0; i < array.length; i++) {
             if (array[i] != 0) {
@@ -393,7 +397,7 @@ public class CustomArrays {
         int k = 0;
         for (int i = zerosAndOnes.length - 1; i >= 0; i--) {
             if (zerosAndOnes[i] != 0 && zerosAndOnes[i] != 1) {
-                System.out.print("Elements of passed array must be zero or one:");
+                System.out.println("Elements of passed array must be zero or one:");
                 return -1;
             }
             sum += zerosAndOnes[i] * Math.pow(2, k);
