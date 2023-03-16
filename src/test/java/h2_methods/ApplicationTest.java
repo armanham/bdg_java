@@ -1,7 +1,8 @@
 package h2_methods;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationTest {
 
@@ -9,8 +10,8 @@ public class ApplicationTest {
 
     @Test
     void sumOfSequenceOfNumbersTest() {
-        Assertions.assertEquals(9, application.sumOfSequenceOfNumbers(2, 4));
-        Assertions.assertEquals(0, application.sumOfSequenceOfNumbers(-4, 4));
-        Assertions.assertEquals(-1, application.sumOfSequenceOfNumbers(2, 1));
+        assertEquals(9, application.sumOfSequenceOfNumbers(2, 4));
+        assertEquals(0, application.sumOfSequenceOfNumbers(-4, 4));
+        assertEquals(-1, application.sumOfSequenceOfNumbers(2, 1));
     }
 }
