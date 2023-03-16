@@ -344,7 +344,7 @@ public class CustomArrays {
      * @param array int[] array.
      * @return new array of the longest sequence in non-decreasing order of array.
      */
-    public static int[] longestNonDecreasingSequence(int[] array) {
+    public int[] longestNonDecreasingSequence(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
             return new int[0];
