@@ -96,9 +96,83 @@ public class StringTest {
         assertTrue(thrown);
     }
 
+    @Test
+    void equalsTest() {
+        string = "abc";
+        assertNotNull(string);
+        assertTrue(string.equals("abc"));
+        assertTrue(string.equals(new String("abc")));
+        assertFalse(string.equals(" abc"));
+    }
 
-   // @Test
+    @Test
+    void contentEqualsTest() {
+        string = "abc";
+        StringBuilder sb = new StringBuilder("abc");
+        assertNotNull(string);
+        assertNotNull(sb);
+        assertTrue(string.contentEquals(sb));
+        sb.append("d");
+        assertFalse(string.contentEquals(sb));
+    }
 
+    @Test
+    void equalsIgnoreCaseTest() {
+        string = "ABcd";
+        String str = "aBCd";
+        assertNotNull(string);
+        assertNotNull(str);
+        assertTrue(string.equalsIgnoreCase(str));
+    }
+
+    @Test
+    void compareToTest() {
+        string = "ABC";
+        assertNotNull(string);
+        assertEquals(-1, string.compareTo("BAC"));
+        assertEquals(1, string.compareTo("ABB"));
+        assertEquals(0, string.compareTo("ABC"));
+        assertEquals(-8, string.compareTo("ABK"));
+        assertEquals(-32, string.compareTo("abc"));
+    }
+
+    @Test
+    void compareToIgnoreCaseTest() {
+        string = "ABC";
+        assertNotNull(string);
+        assertEquals(0, string.compareToIgnoreCase("abc"));
+    }
+
+    @Test
+    void startsWithTest() {
+        string = "word";
+        assertNotNull(string);
+        assertTrue(string.startsWith("w"));
+        assertTrue(string.startsWith("word"));
+        assertFalse(string.startsWith(" "));
+        assertFalse(string.startsWith("wrd"));
+        assertFalse(string.startsWith("wrodd"));
+    }
+
+    @Test
+    void endsWithTest() {
+        string = "word";
+        assertNotNull(string);
+        assertTrue(string.endsWith("d"));
+        assertTrue(string.endsWith("rd"));
+        assertTrue(string.endsWith("word"));
+        assertFalse(string.endsWith("dd"));
+        assertFalse(string.endsWith(" "));
+        assertFalse(string.endsWith("wordd"));
+    }
+
+    @Test
+    void indexOfTest() {
+        string = "good morning";
+        assertNotNull(string);
+
+        //TODO
+    }
 
     @Test
     void toUpperCaseTest() {
