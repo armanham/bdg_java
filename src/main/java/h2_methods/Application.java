@@ -44,7 +44,7 @@ public class Application {
      * @param end   last number of natural sequence.
      * @return sum of all natural numbers in [start; end].
      */
-    public int sumOfSequenceOfNaturalNumbers(int start, int end) {
+    public int sumOfSequenceOfNumbers(int start, int end) {
         if (end <= start) {
             System.out.println("Parameter end must be greater than start:");
             return -1;
