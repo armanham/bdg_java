@@ -43,11 +43,11 @@ public class Application {
      * @param start 1st number of natural sequence.
      * @param end   last number of natural sequence.
      * @return sum of all natural numbers in [start; end].
+     * @throws IllegalArgumentException if parameter end less or equal than parameter start.
      */
-    public int sumOfSequenceOfNumbers(int start, int end) {
+    public int sumOfSequenceOfNumbers(int start, int end) throws IllegalArgumentException {
         if (end <= start) {
-            System.out.println("Parameter end must be greater than start:");
-            return -1;
+            throw new IllegalArgumentException("Parameter end must be greater than start:");
         }
         int sum = 0;
         int countOfSequence = end - start + 1;
