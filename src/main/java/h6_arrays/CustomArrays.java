@@ -90,15 +90,15 @@ public class CustomArrays {
      *
      * @param array    int[] array, original array.
      * @param newArray int[] array, new array after the move.
+     * @throws IllegalArgumentException if lengths of passed arrays are not equals.
      */
-    public void moveElementsToAnotherArray(int[] array, int[] newArray) {
+    public void moveElementsToAnotherArray(int[] array, int[] newArray) throws IllegalArgumentException {
         if (array.length == 0) {
             System.out.println("The original array has no elements: ");
             return;
         }
         if (array.length != newArray.length) {
-            System.out.println("Lengths of passed arrays must be equals.");
-            return;
+            throw new IllegalArgumentException("Lengths of passed arrays must be equals: ");
         }
 
         for (int i = 0; i < array.length; i++) {
@@ -114,19 +114,17 @@ public class CustomArrays {
      * @param array1 int[] array.
      * @param array2 int[] array.
      * @return the sum array of array1 and array2.
+     * @throws IllegalArgumentException if lengths of passed arrays are not equals.
      */
-    public int[] sum(int[] array1, int[] array2) {
-        int[] sumOfArrays = new int[array1.length];
-
-        if (array1.length == 0 || array2.length == 0) {
-            System.out.println("One or both of passed array has no elements: ");
-            return sumOfArrays;
+    public int[] sum(int[] array1, int[] array2) throws IllegalArgumentException {
+        if (array1.length == 0 && array2.length == 0) {
+            return array1;
         }
         if (array1.length != array2.length) {
-            System.out.println("Lengths of passed arrays must be equals.");
-            return sumOfArrays;
+            throw new IllegalArgumentException("Lengths of passed arrays must be equals: ");
         }
 
+        int[] sumOfArrays = new int[array1.length];
         for (int i = 0; i < array1.length; i++) {
             sumOfArrays[i] = array1[i] + array2[i];
         }
@@ -140,10 +138,10 @@ public class CustomArrays {
      * @param array  int[] array.
      * @param number int number.
      * @return count of how many times the given number occurs in the array.
+     * -1 if passed array has no elements.
      */
     public int countOfNumberInArray(int number, int[] array) {
         if (array.length == 0) {
-            System.out.println("Passed array has no elements:");
             return -1;
         }
 
@@ -161,11 +159,12 @@ public class CustomArrays {
      * This method prints all non-repeating triplets in array.
      *
      * @param array int[] array.
+     * @return non-repeating triplets in array.
+     * @throws IllegalArgumentException if passed array do not have three and more elements.
      */
-    public int[][] nonRepeatingTriplets(int[] array) {
+    public int[][] nonRepeatingTriplets(int[] array) throws IllegalArgumentException {
         if (array.length < 3) {
-            System.out.println("Passed array must have three and more elements:");
-            return new int[0][0];
+            throw new IllegalArgumentException("Passed array must have three and more elements: ");
         }
 
         int countOfZeros = countOfNumberInArray(0, array);
@@ -328,6 +327,7 @@ public class CustomArrays {
         }
 
         if (countOfNoZeros == array.length) {
+            System.out.println("There is no zeros in passed array: ");
             return array;
         }
 
@@ -351,7 +351,7 @@ public class CustomArrays {
     public int[] longestNonDecreasingSequence(int[] array) {
         if (array.length == 0) {
             System.out.println("Passed array has no elements:");
-            return new int[0];
+            return array;
         }
         if (array.length == 1) {
             return array;
@@ -386,19 +386,19 @@ public class CustomArrays {
      *
      * @param zerosAndOnes int[] number, elements must be only 0 and 1.
      * @return decimal value of binary array.
+     * @throws IllegalArgumentException if passed array has no elements,
+     *                                  if array has elements different from zero and one.
      */
-    public int binaryToDecimal(int[] zerosAndOnes) {
+    public int binaryToDecimal(int[] zerosAndOnes) throws IllegalArgumentException {
         if (zerosAndOnes.length == 0) {
-            System.out.println("Passed array has no elements:");
-            return -1;
+            throw new IllegalArgumentException("Passed array has no elements: ");
         }
 
         int sum = 0;
         int k = 0;
         for (int i = zerosAndOnes.length - 1; i >= 0; i--) {
             if (zerosAndOnes[i] != 0 && zerosAndOnes[i] != 1) {
-                System.out.println("Elements of passed array must be zero or one:");
-                return -1;
+                throw new IllegalArgumentException("Elements of passed array must be zero or one: ");
             }
             sum += zerosAndOnes[i] * Math.pow(2, k);
             k++;
@@ -412,11 +412,11 @@ public class CustomArrays {
      *
      * @param array int[] array.
      * @return the smallest element of array.
+     * @throws IllegalArgumentException if passed array has no elements.
      */
-    public int minElementOf(int[] array) {
+    public int minElementOf(int[] array) throws IllegalArgumentException {
         if (array.length == 0) {
-            System.out.println("Passed array has no elements:");
-            return -1;
+            throw new IllegalArgumentException("Passed array has no elements: ");
         }
 
         int min = array[0];
@@ -434,11 +434,11 @@ public class CustomArrays {
      *
      * @param array int[] array.
      * @return the largest element of array.
+     * @throws IllegalArgumentException if passed array has no elements.
      */
-    public int maxElementOf(int[] array) {
+    public int maxElementOf(int[] array) throws IllegalArgumentException {
         if (array.length == 0) {
-            System.out.println("Passed array has no elements:");
-            return -1;
+            throw new IllegalArgumentException("Passed array has no elements: ");
         }
 
         int max = array[0];
@@ -506,11 +506,12 @@ public class CustomArrays {
      * @param matrix int[][] matrix
      * @return true if the sums of the elements of all the rows
      * of the matrix are even, false otherwise.
+     * @throws IllegalArgumentException if passed matrix is not square matrix,
+     *                                  if passed matrix has no elements.
      */
-    public boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) {
+    public boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) throws IllegalArgumentException {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
-            System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return false;
+            throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
         int k = 0;
@@ -535,11 +536,12 @@ public class CustomArrays {
      *
      * @param matrix int[][] matrix.
      * @return the sum of principal diagonal.
+     * @throws IllegalArgumentException if passed matrix is not square matrix,
+     *                                  if passed matrix has no elements.
      */
-    public int sumOfPrincipalDiagonal(int[][] matrix) {
+    public int sumOfPrincipalDiagonal(int[][] matrix) throws IllegalArgumentException {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
-            System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return -1;
+            throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
         int sum = 0;
@@ -559,11 +561,12 @@ public class CustomArrays {
      *
      * @param matrix int[][] matrix.
      * @return the sum of secondary diagonal.
+     * @throws IllegalArgumentException if passed matrix is not square matrix,
+     *                                  if passed matrix has no elements.
      */
-    public int sumOfSecondaryDiagonal(int[][] matrix) {
+    public int sumOfSecondaryDiagonal(int[][] matrix) throws IllegalArgumentException {
         if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
-            System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return -1;
+            throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
         int sum = 0;
