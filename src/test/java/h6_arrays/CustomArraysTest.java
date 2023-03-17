@@ -11,9 +11,15 @@ public class CustomArraysTest {
     @Test
     void sumTest() {
         assertArrayEquals(new int[]{3, 6, 8}, arrays.sum(new int[]{1, 2, 3}, new int[]{2, 4, 5}));
-        assertArrayEquals(new int[]{}, arrays.sum(new int[]{}, new int[]{2, 4, 5}));
         assertArrayEquals(new int[]{}, arrays.sum(new int[]{}, new int[]{}));
-        assertArrayEquals(new int[]{0, 0}, arrays.sum(new int[]{1, 2}, new int[]{2, 4, 5}));
+
+        boolean thrown = false;
+        try {
+            arrays.sum(new int[]{}, new int[]{2, 4, 5});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
@@ -40,6 +46,7 @@ public class CustomArraysTest {
                 {0, 1, 3}, {1, 1, 2}, {1, 1, 3},
                 {1, 2, 3}, {0, 0, 2}, {0, 0, 3}, {0, 2, 3}};
 
+        assertTrue(arrays.isPresent(new int[]{1, 0, 0}, matrix));
         assertTrue(arrays.isPresent(new int[]{0, 0, 1}, matrix));
         assertFalse(arrays.isPresent(new int[]{0, 0, 5}, matrix));
         assertFalse(arrays.isPresent(new int[]{}, matrix));
@@ -87,26 +94,54 @@ public class CustomArraysTest {
     @Test
     void binaryToDecimalTest() {
         assertEquals(7, arrays.binaryToDecimal(new int[]{1, 1, 1}));
-        assertEquals(-1, arrays.binaryToDecimal(new int[]{1, 3, 1}));
-        assertEquals(-1, arrays.binaryToDecimal(new int[]{}));
+
+        boolean thrown = false;
+        try {
+            arrays.binaryToDecimal(new int[]{1, 3, 1});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+
+        thrown = false;
+        try {
+            arrays.binaryToDecimal(new int[]{});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
     void minElementOfTest() {
         assertEquals(5, arrays.minElementOf(new int[]{6, 12, 8, 5, 7}));
-        assertEquals(-1, arrays.minElementOf(new int[]{}));
         assertEquals(-1, arrays.minElementOf(new int[]{2, -1, 0}));
+
+        boolean thrown = false;
+        try {
+            arrays.minElementOf(new int[]{});
+        }catch (IllegalArgumentException ex){
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
-    void maxElementOfTest(){
+    void maxElementOfTest() {
         assertEquals(12, arrays.maxElementOf(new int[]{6, 12, 8, 5, 7}));
-        assertEquals(-1, arrays.maxElementOf(new int[]{}));
         assertEquals(-1, arrays.maxElementOf(new int[]{-3, -1, -8}));
+
+        boolean thrown = false;
+        try {
+            arrays.maxElementOf(new int[]{});
+        }catch (IllegalArgumentException ex){
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
-    void invertMatrixToTheMainDiagonalTest(){
+    void invertMatrixToTheMainDiagonalTest() {
 
     }
 }
