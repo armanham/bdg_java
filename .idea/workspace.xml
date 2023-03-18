@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c85e1550-84ac-41d6-b182-5e6f0d7f49ae" name="Changes" comment="Updated .gitignore">
+    <list default="true" id="c85e1550-84ac-41d6-b182-5e6f0d7f49ae" name="Changes" comment="Added com.bdg package in main/java/ and test/java/">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StringTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,52 +60,76 @@
       <recent name="C:\Users\user\Java Projects\bdg_java\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StringTest.endsWithTest">
-    <configuration name="StringTest.compareToIgnoreCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.com.bdg.h12_sortingalgorithms.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="h12_sortingalgorithms.Test" />
       <module name="bdg_java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StringTest" />
-      <option name="METHOD_NAME" value="compareToIgnoreCaseTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="h12_sortingalgorithms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.bdg.h12_sortingalgorithms.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bdg.h12_sortingalgorithms.Test" />
+      <module name="bdg_java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bdg.h12_sortingalgorithms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomArraysTest.binaryToDecimalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bdg_java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="h6_arrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="h6_arrays" />
+      <option name="MAIN_CLASS_NAME" value="h6_arrays.CustomArraysTest" />
+      <option name="METHOD_NAME" value="binaryToDecimalTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringTest.compareToTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomArraysTest.maxElementOfTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bdg_java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StringTest" />
-      <option name="METHOD_NAME" value="compareToTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="h6_arrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="h6_arrays" />
+      <option name="MAIN_CLASS_NAME" value="h6_arrays.CustomArraysTest" />
+      <option name="METHOD_NAME" value="maxElementOfTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringTest.endsWithTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomArraysTest.minElementOfTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bdg_java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StringTest" />
-      <option name="METHOD_NAME" value="endsWithTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringTest.equalsIgnoreCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bdg_java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StringTest" />
-      <option name="METHOD_NAME" value="equalsIgnoreCaseTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringTest.startsWithTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bdg_java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StringTest" />
-      <option name="METHOD_NAME" value="startsWithTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="h6_arrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="h6_arrays" />
+      <option name="MAIN_CLASS_NAME" value="h6_arrays.CustomArraysTest" />
+      <option name="METHOD_NAME" value="minElementOfTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringTest.endsWithTest" />
-        <item itemvalue="JUnit.StringTest.startsWithTest" />
-        <item itemvalue="JUnit.StringTest.compareToIgnoreCaseTest" />
-        <item itemvalue="JUnit.StringTest.compareToTest" />
-        <item itemvalue="JUnit.StringTest.equalsIgnoreCaseTest" />
+        <item itemvalue="Application.com.bdg.h12_sortingalgorithms.Test" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.CustomArraysTest.maxElementOfTest" />
+        <item itemvalue="JUnit.CustomArraysTest.minElementOfTest" />
+        <item itemvalue="JUnit.CustomArraysTest.binaryToDecimalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +155,132 @@
       <updated>1678901286511</updated>
       <workItem from="1678901287311" duration="1099000" />
       <workItem from="1678914131698" duration="4538000" />
+      <workItem from="1678991829352" duration="12378000" />
+      <workItem from="1679078690717" duration="25000" />
+      <workItem from="1679084580341" duration="5770000" />
+      <workItem from="1679133632543" duration="2000" />
+      <workItem from="1679172622860" duration="3618000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated .gitignore">
+      <created>1678992083378</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678992083378</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated StringTest.java file in test/java package">
+      <created>1678992778835</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678992778835</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated Application.java file in main/java/h2_methods package">
+      <created>1678993134078</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993134078</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated Application.java file in main/java/h2_methods package">
+      <created>1678993276122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993276122</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated Application.java file in main/java/h2_methods package">
+      <created>1678993443553</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993443553</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated OperatorsUtil.java file in main/java/h3_operators package">
+      <created>1678993511783</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993511783</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed package for StringTest.java file">
+      <created>1678993573306</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993573306</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added ApplicationTest.java file in test/java/h2_methods/">
+      <created>1678993628546</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678993628546</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated CustomArrays.java file in main/java/h6_arrays/">
+      <created>1678995586110</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678995586110</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated ApplicationTest.java file in main/java/h2_methods/">
+      <created>1679004932179</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679004932179</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added CustomArraysTest.java file in test/java/h6_arrays/">
+      <created>1679005231964</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679005231964</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated CustomArrays.java file in main/java/h6_arrays/">
+      <created>1679005271206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679005271206</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated Application.java file in main/java/h2_methods/">
+      <created>1679085101003</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679085101003</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Updated ApplicationTest.java file in test/java/h2_methods/">
+      <created>1679085287501</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679085287501</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added exceptions in CustomArrays.java file in main/java/h6_arrays/">
+      <created>1679088049528</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679088049528</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Updated CustomArraysTest.java file in test/java/h6_arrays/">
+      <created>1679089736935</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1679089736935</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added com.bdg package in main/java/ and test/java/">
+      <created>1679176600336</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679176600336</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +300,30 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit all project" />
     <MESSAGE value="Updated .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore" />
+    <MESSAGE value="Updated StringTest.java file in test/java package" />
+    <MESSAGE value="Updated Application.java file in main/java/h2_methods package" />
+    <MESSAGE value="Updated OperatorsUtil.java file in main/java/h3_operators package" />
+    <MESSAGE value="Changed package for StringTest.java file" />
+    <MESSAGE value="Added ApplicationTest.java file in test/java/h2_methods/" />
+    <MESSAGE value="Updated ApplicationTest.java file in main/java/h2_methods/" />
+    <MESSAGE value="Added CustomArraysTest.java file in test/java/h6_arrays/" />
+    <MESSAGE value="Updated CustomArrays.java file in main/java/h6_arrays/" />
+    <MESSAGE value="Updated Application.java file in main/java/h2_methods/" />
+    <MESSAGE value="Updated ApplicationTest.java file in test/java/h2_methods/" />
+    <MESSAGE value="Added exceptions in CustomArrays.java file in main/java/h6_arrays/" />
+    <MESSAGE value="Updated CustomArraysTest.java file in test/java/h6_arrays/" />
+    <MESSAGE value="Added com.bdg package in main/java/ and test/java/" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added com.bdg package in main/java/ and test/java/" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bdg/h12_sortingalgorithms/Test.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
