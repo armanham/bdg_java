@@ -1,5 +1,6 @@
 package com.bdg.h6_arrays;
 
+import com.bdg.h12_sortingalgorithms.Sort;
 import com.bdg.h5_algorithmic_exercises.AlgorithmicExercises;
 
 import java.util.Arrays;
@@ -241,11 +242,10 @@ public class CustomArrays {
             return array;
         }
 
-        int temp;
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - i - 1; j++) {
                 if (array[j] < array[j + 1]) {
-                    temp = array[j];
+                    int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                 }
@@ -267,17 +267,8 @@ public class CustomArrays {
             return array;
         }
 
-        int temp;
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
-        }
-        return array;
+        Sort sort = new Sort();
+        return sort.bubbleSort(array);
     }
 
 
@@ -293,11 +284,10 @@ public class CustomArrays {
             return array;
         }
 
-        int temp;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 if (array[i] % 2 == 0 && array[j] % 2 != 0) {
-                    temp = array[i];
+                    int temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
                 }
