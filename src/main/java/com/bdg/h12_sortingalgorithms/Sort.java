@@ -2,9 +2,10 @@ package com.bdg.h12_sortingalgorithms;
 
 public class Sort {
 
-    public int[] bubbleSort(int[] array) throws IllegalArgumentException {
+    public int[] bubbleSort(int[] array) {
         if (array.length == 0) {
-            throw new IllegalArgumentException("Passed an empty array: ");
+            System.out.println("Passed array has no elements:");
+            return array;
         }
 
         for (int i = 0; i < array.length - 1; i++) {
@@ -20,9 +21,10 @@ public class Sort {
     }
 
 
-    public int[] selectionSort(int[] array) throws IllegalArgumentException {
+    public int[] selectionSort(int[] array) {
         if (array.length == 0) {
-            throw new IllegalArgumentException("Passed an empty array: ");
+            System.out.println("Passed array has no elements:");
+            return array;
         }
 
         for (int i = 0; i < array.length - 1; i++) {
@@ -40,9 +42,10 @@ public class Sort {
     }
 
 
-    public int[] insertionSort(int[] array) throws IllegalArgumentException {
+    public int[] insertionSort(int[] array) {
         if (array.length == 0) {
-            throw new IllegalArgumentException("Passed an empty array: ");
+            System.out.println("Passed array has no elements:");
+            return array;
         }
 
         for (int i = 1; i < array.length; i++) {
