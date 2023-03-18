@@ -1,6 +1,5 @@
 package com.bdg.h6_arrays;
 
-import com.bdg.h6_arrays.CustomArrays;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,9 +35,15 @@ public class CustomArraysTest {
                 {0, 1, 3}, {1, 1, 2}, {1, 1, 3},
                 {1, 2, 3}, {0, 0, 2}, {0, 0, 3}, {0, 2, 3}};
         int[] array = new int[]{1, 0, 0, 1, 2, 3};
+        assertArrayEquals(expected, arrays.nonRepeatingTriplets(array));
 
-        //TODO length<3
-        assertEquals(expected, arrays.nonRepeatingTriplets(array));
+        boolean thrown = false;
+        try {
+            arrays.nonRepeatingTriplets(new int[]{1, 2});
+        }catch (IllegalArgumentException es){
+            thrown = true;
+        }
+        assertTrue(thrown);
     }
 
     @Test
@@ -121,7 +126,7 @@ public class CustomArraysTest {
         boolean thrown = false;
         try {
             arrays.minElementOf(new int[]{});
-        }catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             thrown = true;
         }
         assertTrue(thrown);
@@ -135,7 +140,7 @@ public class CustomArraysTest {
         boolean thrown = false;
         try {
             arrays.maxElementOf(new int[]{});
-        }catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             thrown = true;
         }
         assertTrue(thrown);
