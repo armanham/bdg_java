@@ -1,4 +1,4 @@
-package com.bdg.h12;
+package com.bdg.h12.sortingalgorithms;
 
 import com.bdg.h12.sortingalgorithms.Sort;
 
