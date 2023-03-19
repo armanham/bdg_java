@@ -40,7 +40,7 @@ public class CustomArraysTest {
         boolean thrown = false;
         try {
             arrays.nonRepeatingTriplets(new int[]{1, 2});
-        }catch (IllegalArgumentException es){
+        } catch (IllegalArgumentException ex) {
             thrown = true;
         }
         assertTrue(thrown);
@@ -148,6 +148,138 @@ public class CustomArraysTest {
 
     @Test
     void invertMatrixToTheMainDiagonalTest() {
+        int[][] matrix = new int[][]{
+                {1, 2, 3, 0},
+                {2, 3, 4, 7},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}};
+        int[][] expected = new int[][]{
+                {1, 2, 1, 2},
+                {2, 3, 3, 3},
+                {3, 4, 5, 4},
+                {0, 7, 5, 5}
+        };
 
+        assertArrayEquals(expected, arrays.invertMatrixToTheMainDiagonal(matrix));
+        assertNull(arrays.invertMatrixToTheMainDiagonal(new int[][]{
+                {1, 2, 3, 0},
+                {2, 3, 4, 7},
+                {1, 3, 5, 5}
+        }));
+        assertNull(arrays.invertMatrixToTheMainDiagonal(new int[][]{
+                {1, 2, 3, 0},
+                {2, 3, 4},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}
+        }));
+        assertNull(arrays.invertMatrixToTheMainDiagonal(new int[][]{
+                {},
+                {}
+        }));
+    }
+
+    @Test
+    void isTheSumOfElementsOfAnyRowsEvenTest() {
+        assertTrue(arrays.isTheSumOfElementsOfAnyRowsEven(new int[][]{
+                {1, 2, 3, 0},
+                {2, 3, 4, 7},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+        assertFalse(arrays.isTheSumOfElementsOfAnyRowsEven(new int[][]{
+                {1, 2, 3, 5},
+                {2, 3, 4, 7},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+
+        boolean thrown = false;
+        try {
+            arrays.isTheSumOfElementsOfAnyRowsEven(new int[][]{
+                    {1, 2, 3, 0},
+                    {2, 2},
+                    {1, 3, 5, 5},
+                    {2, 3, 4, 5}});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    void sumOfPrincipalDiagonalTest() {
+        assertEquals(13, arrays.sumOfPrincipalDiagonal(new int[][]{
+                {1, 2, 3, 0},
+                {2, 2, 0, 1},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+
+        boolean thrown = false;
+        try {
+            arrays.sumOfPrincipalDiagonal(new int[][]{
+                    {1, 2, 3, 0},
+                    {2, 2},
+                    {1, 3, 5, 5},
+                    {2, 3, 4, 5}});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+
+        thrown = false;
+        try {
+            arrays.sumOfPrincipalDiagonal(new int[][]{
+                    {},
+            });
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    void sumOfSecondaryDiagonalTest() {
+        assertEquals(5, arrays.sumOfSecondaryDiagonal(new int[][]{
+                {1, 2, 3, 0},
+                {2, 2, 0, 1},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+
+        boolean thrown = false;
+        try {
+            arrays.sumOfSecondaryDiagonal(new int[][]{
+                    {1, 2, 3, 0},
+                    {2, 2},
+                    {1, 3, 5, 5},
+                    {2, 3, 4, 5}});
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+
+        thrown = false;
+        try {
+            arrays.sumOfSecondaryDiagonal(new int[][]{
+                    {},
+            });
+        } catch (IllegalArgumentException ex) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    void isSquareMatrixTest() {
+        assertTrue(arrays.isSquareMatrix(new int[][]{
+                {1, 2, 3, 0},
+                {2, 2, 0, 1},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+
+        assertFalse(arrays.isSquareMatrix(new int[][]{
+                {1, 2, 3, 0},
+                {0, 1},
+                {1, 3, 5, 5},
+                {2, 3, 4, 5}}));
+
+        assertFalse(arrays.isSquareMatrix(new int[][]{}));
     }
 }
