@@ -1,6 +1,6 @@
 package com.bdg.h6_arrays;
 
-import com.bdg.h12_sortingalgorithms.Sort;
+import com.bdg.h12.sortingalgorithms.Sort;
 import com.bdg.h5_algorithmic_exercises.AlgorithmicExercises;
 
 import java.util.Arrays;
