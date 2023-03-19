@@ -1,4 +1,6 @@
-package com.bdg.h12_sortingalgorithms;
+package com.bdg.h12;
+
+import com.bdg.h12.sortingalgorithms.Sort;
 
 public class Test {
 
