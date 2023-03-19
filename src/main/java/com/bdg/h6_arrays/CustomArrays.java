@@ -447,7 +447,7 @@ public class CustomArrays {
      * @param matrix int[][] matrix.
      */
     public void printElementsAboveMainDiagonal(int[][] matrix) {
-        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+        if (!isSquareMatrix(matrix)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
             return;
         }
@@ -470,9 +470,9 @@ public class CustomArrays {
      * @return matrix inverted with respect to the main diagonal.
      */
     public int[][] invertMatrixToTheMainDiagonal(int[][] matrix) {
-        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+        if (!isSquareMatrix(matrix)) {
             System.out.println("Passed matrix must be square matrix, and must have elements:");
-            return matrix;
+            return null;
         }
 
         for (int i = 0; i < matrix.length; i++) {
@@ -499,7 +499,7 @@ public class CustomArrays {
      *                                  if passed matrix has no elements.
      */
     public boolean isTheSumOfElementsOfAnyRowsEven(int[][] matrix) throws IllegalArgumentException {
-        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+        if (!isSquareMatrix(matrix)) {
             throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
@@ -529,7 +529,7 @@ public class CustomArrays {
      *                                  if passed matrix has no elements.
      */
     public int sumOfPrincipalDiagonal(int[][] matrix) throws IllegalArgumentException {
-        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+        if (!isSquareMatrix(matrix)) {
             throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
@@ -550,7 +550,7 @@ public class CustomArrays {
      *                                  if passed matrix has no elements.
      */
     public int sumOfSecondaryDiagonal(int[][] matrix) throws IllegalArgumentException {
-        if (matrix.length == 0 || matrix[0].length == 0 || (matrix.length != matrix[0].length)) {
+        if (!isSquareMatrix(matrix)) {
             throw new IllegalArgumentException("Passed matrix must be square matrix, and must have elements: ");
         }
 
@@ -559,6 +559,29 @@ public class CustomArrays {
             sum += matrix[i][matrix.length - (i + 1)];
         }
         return sum;
+    }
+
+
+    /**
+     * This method determines is passed matrix square or not.
+     *
+     * @param matrix int[][]-type.
+     * @return true, if passed matrix is a square matrix, false otherwise.
+     */
+    public boolean isSquareMatrix(int[][] matrix) {
+        if (matrix.length == 0) {
+            return false;
+        }
+        int result = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i].length == 0) {
+                return false;
+            }
+            for (int j = 0; j < matrix[i].length; j++) {
+                result++;
+            }
+        }
+        return result == matrix[0].length * matrix[0].length;
     }
 
 
