@@ -2,6 +2,8 @@ package com.bdg.h4_algorithmic_exercises;
 
 import com.bdg.h3.statements.StatementsUtil;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class AlgorithmicExercises {
@@ -81,7 +83,8 @@ public class AlgorithmicExercises {
 
     /**
      * This method finds the largest prime factor of number.
-     * @param number int number, must be > 1.
+     *
+     * @param number int-type.
      * @return the largest prime factor of number.
      */
     public int largestPrimeFactorOf(int number) {
@@ -90,33 +93,50 @@ public class AlgorithmicExercises {
             return -1;
         }
 
-        int largestPrimeFactor = 0;
+        List<Integer> primeFactors = primeFactorsOf(number);
+        return primeFactors.get(primeFactors.size() - 1);
+    }
+
+
+    /**
+     * This method finds anc collects to list all prime factors of passed integer number.
+     *
+     * @param number int-type.
+     * @return list of prime factors of an integer.
+     */
+    public List<Integer> primeFactorsOf(int number) {
+        if (number <= 1) {
+            System.out.println("Only >1 numbers have prime divisors");
+            return null;
+        }
+
+        List<Integer> primeFactors = new ArrayList<>();
         for (int i = 2; i <= number; i++) {
-            while (isPrime(i) && number % i == 0) {
-                largestPrimeFactor = i;
-                i++;
+            if (isPrime(i) && number % i == 0) {
+                primeFactors.add(i);
             }
         }
-        return largestPrimeFactor;
+        return primeFactors;
     }
 
 
     /**
      * This method determines is the number prime or not.
-     * @param number int number.
+     *
+     * @param number int-type.
      * @return true if the number is prime, false otherwise.
      */
     public boolean isPrime(int number) {
-        if (number <= 0) {
-            System.out.println("Only positive numbers can be prime:");
+        if (number <= 1) {
+            System.out.println("Only >1 numbers can be prime:");
             return false;
         }
-        int countOfDivisors = 0;
-        for (int i = 2; i <= number; i++) {
+
+        for (int i = 2; i <= number / 2; i++) {
             if (number % i == 0) {
-                countOfDivisors++;
+                return false;
             }
         }
-        return countOfDivisors == 1;
+        return true;
     }
 }
