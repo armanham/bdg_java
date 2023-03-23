@@ -46,13 +46,12 @@ public class Stack<T> {
         return top == -1;
     }
 
-    public int ensureCapacity() {
-        return capacity += 10;
+    public void ensureCapacity() {
+        capacity += 10;
     }
 
-    public int trimToSize() {
+    public void trimToSize() {
         capacity = stack.size();
-        return capacity;
     }
 
     public int getCapacity() {
