@@ -12,6 +12,12 @@ public class Stack<T> {
         this.capacity = capacity;
     }
 
+    /**
+     * This method adds element on the top of stack.
+     *
+     * @param element T - type.
+     * @return true, if element added successfully, false otherwise.
+     */
     public boolean push(T element) {
         if (top == capacity - 1) {
             System.out.println("Stack Overflow: ");
@@ -23,6 +29,11 @@ public class Stack<T> {
         }
     }
 
+    /**
+     * This method removes element on the top of stack.
+     *
+     * @return true, if element removed successfully, false otherwise.
+     */
     public boolean pop() {
         if (top == -1) {
             System.out.println("Stack Underflow: ");
@@ -34,22 +45,38 @@ public class Stack<T> {
         }
     }
 
+    /**
+     * This method gets element from the top of stack, but does not remove it.
+     *
+     * @return element from the top of stack.
+     */
     public T peek() {
-        if (top == -1){
+        if (top == -1) {
             System.out.println("Stack is empty: ");
             return null;
         }
         return stack.get(top);
     }
 
+    /**
+     * This method determines is the stack empty or not.
+     *
+     * @return true, if the stack is empty, false otherwise.
+     */
     public boolean isEmpty() {
         return top == -1;
     }
 
+    /**
+     * This method increases capacity of stack.
+     */
     public void ensureCapacity() {
         capacity += 10;
     }
 
+    /**
+     * This method decreases capacity of stack.
+     */
     public void trimToSize() {
         capacity = stack.size();
     }
