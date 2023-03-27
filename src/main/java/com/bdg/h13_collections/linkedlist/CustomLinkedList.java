@@ -23,7 +23,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        return indexOf(o) >= 0;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
         Node<E> currentNode = head;
         int counter = 0;
-        while (currentNode.next != null) {
+        while (currentNode != null) {
             if (counter == index) {
                 return currentNode.value;
             }
@@ -140,7 +140,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
         Node<E> currentNode = head;
         int counter = 0;
-        while (currentNode.next != null) {
+        while (currentNode != null) {
             if (counter == index) {
                 return currentNode.value = element;
             }
@@ -164,12 +164,64 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        if (isEmpty()){
+            return -1;
+        }
+
+        int counter;
+        if (o == null){
+            Node<E> currentNode = head;
+            counter = 0;
+            while (currentNode != null){
+                if (currentNode.value == null){
+                    return counter;
+                }
+                currentNode = currentNode.next;
+                counter++;
+            }
+        }else {
+            Node<E> currentNode = head;
+            counter = 0;
+            while (currentNode != null){
+                if (currentNode.value.equals(o)){
+                    return counter;
+                }
+                currentNode = currentNode.next;
+                counter++;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        if (isEmpty()){
+            return -1;
+        }
+
+        int counter;
+        if (o == null){
+            Node<E> currentNode = tail;
+            counter = size - 1;
+            while (currentNode != null){
+                if (currentNode.value == null){
+                    return counter;
+                }
+                currentNode = currentNode.prev;
+                counter--;
+            }
+        }else {
+            Node<E> currentNode = tail;
+            counter = size - 1;
+            while (currentNode != null){
+                if (currentNode.value.equals(o)){
+                    return counter;
+                }
+                currentNode = currentNode.prev;
+                counter--;
+            }
+        }
+        return -1;
     }
 
     @Override
