@@ -57,7 +57,12 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        if (isEmpty()){
+            return false;
+        }
+
+
+        return true;
     }
 
     @Override
@@ -270,14 +275,13 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
     @Override
     public boolean offerLast(E e) {
         addLast(e);
-        return false;
+        return true;
     }
 
     @Override
     public E removeFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("List is empty: ");
-        }
+        throwsExceptionIfListIsEmpty();
+
         if (size == 1) {
             Node<E> currentHead = head;
             head = tail = null;
@@ -292,9 +296,8 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public E removeLast() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("List is empty: ");
-        }
+        throwsExceptionIfListIsEmpty();
+
         if (size == 1) {
             Node<E> currentTail = tail;
             head = tail = null;
@@ -325,17 +328,13 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public E getFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("List is empty: ");
-        }
+        throwsExceptionIfListIsEmpty();
         return head.value;
     }
 
     @Override
     public E getLast() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("List is empty: ");
-        }
+        throwsExceptionIfListIsEmpty();
         return tail.value;
     }
 
@@ -425,6 +424,12 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
     private void checkIsInRange(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
+        }
+    }
+
+    private void throwsExceptionIfListIsEmpty(){
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty: ");
         }
     }
 }
