@@ -275,22 +275,52 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public E removeFirst() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty: ");
+        }
+        if (size == 1) {
+            Node<E> currentHead = head;
+            head = tail = null;
+            size--;
+            return currentHead.value;
+        }
+        Node<E> currentHead = head;
+        head = head.next;
+        size--;
+        return currentHead.value;
     }
 
     @Override
     public E removeLast() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty: ");
+        }
+        if (size == 1) {
+            Node<E> currentTail = tail;
+            head = tail = null;
+            size--;
+            return currentTail.value;
+        }
+
+        Node<E> currentTail = tail;
+        Node<E> temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        size--;
+        return currentTail.value;
     }
 
     @Override
     public E pollFirst() {
-        return null;
+        return isEmpty() ? null : removeFirst();
     }
 
     @Override
     public E pollLast() {
-        return null;
+        return isEmpty() ? null : removeLast();
     }
 
     @Override
@@ -336,32 +366,32 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public E remove() {
-        return null;
+        return removeFirst();
     }
 
     @Override
     public E poll() {
-        return null;
+        return pollFirst();
     }
 
     @Override
     public E element() {
-        return null;
+        return getFirst();
     }
 
     @Override
     public E peek() {
-        return null;
+        return peekFirst();
     }
 
     @Override
     public void push(E e) {
-
+        addFirst(e);
     }
 
     @Override
     public E pop() {
-        return null;
+        return removeFirst();
     }
 
     @Override
