@@ -121,12 +121,6 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
         return null;
     }
 
-    private void checkIsInRange(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
-    }
-
     @Override
     public E set(int index, E element) {
         checkIsInRange(index);
@@ -154,36 +148,36 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
     public void add(int index, E element) {
         checkIsInRange(index);
 
-
     }
 
     @Override
     public E remove(int index) {
+        checkIsInRange(index);
         return null;
     }
 
     @Override
     public int indexOf(Object o) {
-        if (isEmpty()){
+        if (isEmpty()) {
             return -1;
         }
 
         int counter;
-        if (o == null){
+        if (o == null) {
             Node<E> currentNode = head;
             counter = 0;
-            while (currentNode != null){
-                if (currentNode.value == null){
+            while (currentNode != null) {
+                if (currentNode.value == null) {
                     return counter;
                 }
                 currentNode = currentNode.next;
                 counter++;
             }
-        }else {
+        } else {
             Node<E> currentNode = head;
             counter = 0;
-            while (currentNode != null){
-                if (currentNode.value.equals(o)){
+            while (currentNode != null) {
+                if (currentNode.value.equals(o)) {
                     return counter;
                 }
                 currentNode = currentNode.next;
@@ -195,26 +189,26 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public int lastIndexOf(Object o) {
-        if (isEmpty()){
+        if (isEmpty()) {
             return -1;
         }
 
         int counter;
-        if (o == null){
+        if (o == null) {
             Node<E> currentNode = tail;
             counter = size - 1;
-            while (currentNode != null){
-                if (currentNode.value == null){
+            while (currentNode != null) {
+                if (currentNode.value == null) {
                     return counter;
                 }
                 currentNode = currentNode.prev;
                 counter--;
             }
-        }else {
+        } else {
             Node<E> currentNode = tail;
             counter = size - 1;
-            while (currentNode != null){
-                if (currentNode.value.equals(o)){
+            while (currentNode != null) {
+                if (currentNode.value.equals(o)) {
                     return counter;
                 }
                 currentNode = currentNode.prev;
@@ -241,21 +235,41 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public void addFirst(E e) {
+        Node<E> newNode = new Node<>(e, null, head);
 
+        if (head == null) {
+            head = tail = newNode;
+            size++;
+            return;
+        }
+        head.prev = newNode;
+        head = newNode;
+        size++;
     }
 
     @Override
     public void addLast(E e) {
+        Node<E> newNode = new Node<>(e, tail, null);
 
+        if (head == null) {
+            head = tail = newNode;
+            size++;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+        size++;
     }
 
     @Override
     public boolean offerFirst(E e) {
-        return false;
+        addFirst(e);
+        return true;
     }
 
     @Override
     public boolean offerLast(E e) {
+        addLast(e);
         return false;
     }
 
@@ -281,22 +295,28 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public E getFirst() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty: ");
+        }
+        return head.value;
     }
 
     @Override
     public E getLast() {
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty: ");
+        }
+        return tail.value;
     }
 
     @Override
     public E peekFirst() {
-        return null;
+        return isEmpty() ? null : head.value;
     }
 
     @Override
     public E peekLast() {
-        return null;
+        return isEmpty() ? null : tail.value;
     }
 
     @Override
@@ -311,7 +331,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public boolean offer(E e) {
-        return false;
+        return add(e);
     }
 
     @Override
@@ -349,6 +369,17 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
         return null;
     }
 
+    public void show() {
+        Node<E> currentNode = head;
+        System.out.print("[ ");
+        while (currentNode != null) {
+            System.out.print(currentNode.value + ", ");
+            currentNode = currentNode.next;
+        }
+        System.out.print("]");
+        System.out.println();
+    }
+
     private static class Node<E> {
         E value;
         Node<E> prev;
@@ -361,14 +392,9 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
         }
     }
 
-    public void show() {
-        Node<E> currentNode = head;
-        System.out.print("[ ");
-        while (currentNode != null) {
-            System.out.print(currentNode.value + ", ");
-            currentNode = currentNode.next;
+    private void checkIsInRange(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
         }
-        System.out.print("]");
-        System.out.println();
     }
 }
