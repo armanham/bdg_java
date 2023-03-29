@@ -1,5 +1,6 @@
 package com.bdg.h14_collections.exercises;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class FromTwelveToFifteen {
@@ -35,6 +36,20 @@ public class FromTwelveToFifteen {
         //14.Write a Java program to retrieve and remove the first element.
         while (!colors3.isEmpty()){
             System.out.println(colors3.remove());
+        }
+
+        System.out.println("----------------------------------");
+
+        //15.Write a Java program to change priorityQueue to maximum priorityqueue.
+        PriorityQueue<String> colors4 = new PriorityQueue<>(Collections.reverseOrder());
+        colors4.add("Black");
+        colors4.add("White");
+        colors4.add("Red");
+        colors4.add("Orange");
+        colors4.add("Green");
+        colors4.add("Brown");
+        while (!colors4.isEmpty()){
+            System.out.println(colors4.remove());
         }
     }
 }
