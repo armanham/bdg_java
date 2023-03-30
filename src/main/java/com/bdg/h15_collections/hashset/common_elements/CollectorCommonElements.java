@@ -12,7 +12,7 @@ public class CollectorCommonElements {
      * @return new HashSet<Integer> of common elements.
      * @throws IllegalArgumentException if passed null or empty value as an argument.
      */
-    public static HashSet<Integer> Of(HashSet<Integer> hashSet1,
+    public static HashSet<Integer> of(HashSet<Integer> hashSet1,
                                       HashSet<Integer> hashSet2) throws IllegalArgumentException {
         if (hashSet1 == null || hashSet1.isEmpty() || hashSet2 == null || hashSet2.isEmpty()) {
             throw new IllegalArgumentException("Passed null or empty value: ");

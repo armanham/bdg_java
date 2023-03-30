@@ -29,7 +29,7 @@ public class Test {
         integers2.add(7);
         System.out.println(integers2);
 
-        HashSet<Integer> commonEl = CollectorCommonElements.Of(integers1, integers2);
+        HashSet<Integer> commonEl = CollectorCommonElements.of(integers1, integers2);
         System.out.println(commonEl);
     }
 }

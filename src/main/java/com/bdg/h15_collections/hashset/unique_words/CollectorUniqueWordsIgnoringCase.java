@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class CollectorUniqueWordsIgnoringCase {
 
-    public static HashSet<String> Of(HashSet<String> strings) throws IllegalArgumentException {
+    public static HashSet<String> of(HashSet<String> strings) throws IllegalArgumentException {
         if (strings == null || strings.isEmpty()) {
             throw new IllegalArgumentException("Passed null or empty value: ");
         }

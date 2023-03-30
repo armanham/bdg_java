@@ -22,7 +22,7 @@ public class Test {
         System.out.println(CollectorUniqueWordsIgnoringCase.isItemPresentIgnoreCaseIn("", hashSet));
         System.out.println(hashSet);
 
-        HashSet<String> strings = CollectorUniqueWordsIgnoringCase.Of(hashSet);
+        HashSet<String> strings = CollectorUniqueWordsIgnoringCase.of(hashSet);
         System.out.println(strings);
     }
 }
