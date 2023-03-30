@@ -1,14 +1,14 @@
-package com.bdg.h15_collections.linkedhashset.of_custom_objects;
+package com.bdg.h15.collections.hashset.of_custom_objects;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.TreeSet;
+import java.util.*;
+
+import static com.bdg.h15.collections.hashset.of_custom_objects.Human.AgeComparator;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        LinkedHashSet<Human> humans = new LinkedHashSet<>();
+        HashSet<Human> humans = new HashSet<>();
         humans.add(new Human("Bnay", 18));
         humans.add(new Human("Bobby", 90));
         humans.add(new Human("Patrick", 1));
@@ -17,7 +17,7 @@ public class Test {
         humans.add(new Human("Fndo", 5));
 
         ArrayList<Human> humanArrayList = new ArrayList<>(humans);
-        humanArrayList.sort(Human.AgeComparator);
+        Collections.sort(humanArrayList, AgeComparator);
         System.out.println(humanArrayList);
 
         //Object which is in TreeSet must implement Comparable interface.

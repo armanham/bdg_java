@@ -1,4 +1,4 @@
-package com.bdg.h15_collections.hashset.common_elements;
+package com.bdg.h15.collections.hashset.common_elements;
 
 import java.util.HashSet;
 

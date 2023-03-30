@@ -1,4 +1,4 @@
-package com.bdg.h15_collections.hashset.unique_words;
+package com.bdg.h15.collections.hashset.unique_words;
 
 import java.util.HashSet;
 

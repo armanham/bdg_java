@@ -1,4 +1,4 @@
-package com.bdg.h15_collections.hashset.of_custom_objects;
+package com.bdg.h15.collections.linkedhashset.of_custom_objects;
 
 import java.util.Comparator;
 import java.util.Objects;
