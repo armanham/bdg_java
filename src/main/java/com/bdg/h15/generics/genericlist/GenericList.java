@@ -20,9 +20,7 @@ public class GenericList<E> {
         this.capacity = size;
         this.elements = new Object[size];
 
-        for (int i = 0; i < elements.length; i++) {
-            this.elements[i] = elements[i];
-        }
+        System.arraycopy(elements, 0, this.elements, 0, elements.length);
     }
 
     public GenericList() {
@@ -70,16 +68,12 @@ public class GenericList<E> {
     }
 
     public E get(int index) {
-        if (!isInRange(index)) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
+        checkRange(index);
         return (E) elements[index];
     }
 
     public E set(int index, E element) {
-        if (!isInRange(index)) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
+        checkRange(index);
 
         elements[index] = element;
         return element;
@@ -104,9 +98,7 @@ public class GenericList<E> {
     }
 
     public E remove(int index) {
-        if (!isInRange(index)) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
+        checkRange(index);
 
         E removedElement = get(index);
         elements = shiftLeftFrom(index);
@@ -158,18 +150,14 @@ public class GenericList<E> {
 
     private Object[] copyOfCurrentElementsToCapacityEnsuredArray() {
         Object[] copy = new Object[capacity];
-        for (int i = 0; i < elements.length; i++) {
-            copy[i] = elements[i];
-        }
+        System.arraycopy(elements, 0, copy, 0, elements.length);
         elements = copy;
         return elements;
     }
 
 
     private Object[] shiftLeftFrom(int index) {
-        if (!isInRange(index)) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
+        checkRange(index);
 
         Object[] copy = elements;
         for (int i = index; i < size; i++) {
@@ -184,9 +172,7 @@ public class GenericList<E> {
     }
 
     private Object[] shiftRightFrom(int index) {
-        if (!isInRange(index)) {
-            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
-        }
+        checkRange(index);
 
         Object[] copy = new Object[size + 1];
         for (int i = 0; i < size; i++) {
@@ -203,7 +189,9 @@ public class GenericList<E> {
         return copy;
     }
 
-    private boolean isInRange(int index) {
-        return index >= 0 && index < size;
+    private void checkRange(int index) {
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
+        }
     }
 }
