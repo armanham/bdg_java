@@ -1,4 +1,6 @@
-package com.bdg.h15.collections.linkedhashset.of_custom_objects;
+package com.bdg.h15.collections.linkedhashset.remover;
+
+import com.bdg.h15.collections.linkedhashset.of_custom_objects.Human;
 
 import java.util.HashSet;
 import java.util.Iterator;
