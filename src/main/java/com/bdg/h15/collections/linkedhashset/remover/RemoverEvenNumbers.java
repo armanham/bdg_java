@@ -1,4 +1,4 @@
-package com.bdg.h15.collections.linkedhashset.removing_even_integers;
+package com.bdg.h15.collections.linkedhashset.remover;
 
 import java.util.LinkedHashSet;
 
