@@ -103,12 +103,17 @@ public class GenericList<E> {
     }
 
     public void add(int index, E element) {
-        if (!isInRange(index)) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
         }
 
         if (size == capacity) {
             ensureCapacity();
+        }
+
+        if (index == size){
+            add(element);
+            return;
         }
 
         elements = shiftRightFrom(index);
