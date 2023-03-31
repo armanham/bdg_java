@@ -39,24 +39,7 @@ public class GenericList<E> {
     }
 
     public boolean contains(Object o) {
-        if (isEmpty()) {
-            return false;
-        }
-
-        if (o == null) {
-            for (Object item : elements) {
-                if (item == null) {
-                    return true;
-                }
-            }
-        }
-
-        for (Object item : elements) {
-            if (item.equals(o)) {
-                return true;
-            }
-        }
-        return false;
+        return indexOf(o) >= 0;
     }
 
     public boolean add(E e) {
