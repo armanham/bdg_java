@@ -57,12 +57,35 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public boolean remove(Object o) {
-        if (isEmpty()){
+        if (isEmpty() || !contains(o)) {
             return false;
         }
 
+        if (indexOf(o) == 0) {
+            removeFirst();
+            return true;
+        }
+        if (indexOf(o) == size - 1) {
+            removeLast();
+            return true;
+        }
 
-        return true;
+        if (o == null) {
+            for (Node<E> prev = null, currentNode = head; currentNode != null; prev = currentNode, currentNode = currentNode.next) {
+                if (currentNode.value == null) {
+                    unlink(prev, currentNode);
+                    return true;
+                }
+            }
+        } else {
+            for (Node<E> prev = null, currentNode = head; currentNode != null; prev = currentNode, currentNode = currentNode.next) {
+                if (o.equals(currentNode.value)) {
+                    unlink(prev, currentNode);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -151,14 +174,46 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public void add(int index, E element) {
-        checkIsInRange(index);
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index " + index + " out of bounds: ");
+        }
 
+        if (index == 0) {
+            addFirst(element);
+            return;
+        }
+        if (index == size) {
+            addLast(element);
+            return;
+        }
+
+        Node<E> currentNode = head;
+        int counter = 0;
+        while (index - 1 != counter) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+
+        Node<E> newNode = new Node<>(element, currentNode, currentNode.next);
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        size++;
     }
 
     @Override
     public E remove(int index) {
         checkIsInRange(index);
-        return null;
+
+        if (index == 0) {
+            return removeFirst();
+        }
+        if (index == size - 1) {
+            return removeLast();
+        }
+
+        E removed = get(index);
+        remove(removed);
+        return removed;
     }
 
     @Override
@@ -306,12 +361,12 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
         }
 
         Node<E> currentTail = tail;
-        Node<E> temp = head;
-        while (temp.next.next != null) {
-            temp = temp.next;
+        Node<E> currentNode = head;
+        while (currentNode.next.next != null) {
+            currentNode = currentNode.next;
         }
-        temp.next = null;
-        tail = temp;
+        currentNode.next = null;
+        tail = currentNode;
         size--;
         return currentTail.value;
     }
@@ -350,12 +405,18 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public boolean removeFirstOccurrence(Object o) {
-        return false;
+        return remove(o);
     }
 
     @Override
     public boolean removeLastOccurrence(Object o) {
-        return false;
+        int lastIndexOfO = lastIndexOf(o);
+        if (lastIndexOfO < 0){
+            return false;
+        }
+
+        remove(lastIndexOfO);
+        return true;
     }
 
     @Override
@@ -410,15 +471,52 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
     }
 
     private static class Node<E> {
+
         E value;
         Node<E> prev;
         Node<E> next;
-
         public Node(E value, Node<E> prev, Node<E> next) {
             this.value = value;
             this.prev = prev;
             this.next = next;
         }
+
+        public E getValue() {
+            return value;
+        }
+
+        public void setValue(E value) {
+            this.value = value;
+        }
+
+        public Node<E> getPrev() {
+            return prev;
+        }
+
+        public void setPrev(Node<E> prev) {
+            this.prev = prev;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<E> next) {
+            this.next = next;
+        }
+
+    }
+
+    private void unlink(Node<E> prevNode, Node<E> currentNode) {
+        if (prevNode == null) {
+            head = currentNode.next;
+        } else {
+            prevNode.next = currentNode.next;
+        }
+        if (currentNode == tail) {
+            tail = prevNode;
+        }
+        size--;
     }
 
     private void checkIsInRange(int index) {
@@ -427,7 +525,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
         }
     }
 
-    private void throwsExceptionIfListIsEmpty(){
+    private void throwsExceptionIfListIsEmpty() {
         if (isEmpty()) {
             throw new NoSuchElementException("List is empty: ");
         }
