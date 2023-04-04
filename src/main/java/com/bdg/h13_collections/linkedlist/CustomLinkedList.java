@@ -218,7 +218,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public int indexOf(Object o) {
-        if (isEmpty()) {
+        if (isEmpty() || !contains(o)) {
             return -1;
         }
 
@@ -249,7 +249,7 @@ public class CustomLinkedList<E> implements List<E>, Deque<E> {
 
     @Override
     public int lastIndexOf(Object o) {
-        if (isEmpty()) {
+        if (isEmpty() || !contains(o)) {
             return -1;
         }
 
